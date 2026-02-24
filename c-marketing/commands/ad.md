@@ -183,7 +183,7 @@ Skriv validert JSON til kampanjemappen.
 
 ### 4. Forhandsvisning og iterasjon
 
-Skriv `ads.json` til kampanjemappen. Kjor `/claude-everywhere:export` for visuell forhåndsvisning.
+Skriv `ads.json` til kampanjemappen. Kjor `/c-marketing:export` for visuell forhåndsvisning.
 
 - Juster JSON basert pa tilbakemelding
 - Finjuster tekst, overskrifter, CTA, og engasjementstall etter behov

@@ -33,7 +33,7 @@ Parse argumentene:
    mkdir -p clients/<slug>/research/
    mkdir -p clients/<slug>/templates/
    ```
-   Informer brukeren: "Opprettet mappestruktur for `<slug>`. Kjør `/claude-everywhere:onboarding <slug>` for full oppsettsveiledning."
+   Informer brukeren: "Opprettet mappestruktur for `<slug>`. Kjør `/c-marketing:onboarding <slug>` for full oppsettsveiledning."
 3. **Sjekk om profil finnes:** Les `clients/<slug>/profile.md`. Hvis den finnes, spør brukeren:
    - "Profil for `<slug>` finnes allerede. Vil du overskrive, eller bruke `--enrich` for å oppdatere?"
    - Vent på svar. Stopp hvis brukeren ikke vil overskrive.
@@ -308,7 +308,7 @@ Iterer til brukeren er fornøyd.
    Neste steg:
    - Fyll inn manglende felt markert med "FYLL INN"
    - Legg til logo i clients/<slug>/assets/images/
-   - Kjør /claude-everywhere:campaign <tema> for å starte en kampanje
+   - Kjør /c-marketing:campaign <tema> for å starte en kampanje
    ```
 
 ## Enrich-modus

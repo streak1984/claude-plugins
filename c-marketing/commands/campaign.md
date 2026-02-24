@@ -27,7 +27,7 @@ Før du starter, identifiser klienten:
 2. Hvis bare én klient finnes (utenom `_template`): velg den automatisk og bekreft.
 3. Hvis flere finnes: spør brukeren hvilken klient kampanjen er for.
 4. Hvis ingen finnes: spør brukeren om de vil opprette en ny klientprofil:
-   - **Anbefalt:** Kjør `/claude-everywhere:onboarding` for å sette opp arbeidsområdet
+   - **Anbefalt:** Kjør `/c-marketing:onboarding` for å sette opp arbeidsområdet
 
 Les `clients/<slug>/profile.md` og hold den tilgjengelig for alle nedstrøms-faser.
 
@@ -232,7 +232,7 @@ Når alle sub-agenter er ferdige (innhold + bilder):
 
 ## Neste steg
 - Gjennomga innholdet og gi tilbakemelding
-- Kjor `/claude-everywhere:export` for HTML-forhandsvisning
+- Kjor `/c-marketing:export` for HTML-forhandsvisning
 ```
 
 3. **Fortell brukeren**:
@@ -244,7 +244,7 @@ Produsert:
 - [liste over produserte innholdstyper]
 - [antall] bilder
 
-Kjor `/claude-everywhere:export` for HTML-forhandsvisning.
+Kjor `/c-marketing:export` for HTML-forhandsvisning.
 ```
 
 ### Fase 5 — Iterasjon

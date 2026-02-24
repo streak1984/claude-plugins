@@ -5,7 +5,7 @@ argument-hint: "[client name or domain]"
 
 # /onboarding — $ARGUMENTS
 
-Sett opp et nytt arbeidsområde for en klient. Opprett mapper, konfigurer API-nøkler, og kom i gang med claude-everywhere.
+Sett opp et nytt arbeidsområde for en klient. Opprett mapper, konfigurer API-nøkler, og kom i gang med c-marketing.
 
 ## Språk
 
@@ -18,7 +18,7 @@ Sett opp et nytt arbeidsområde for en klient. Opprett mapper, konfigurer API-n�
 Start med en kort velkomstmelding:
 
 ```
-Velkommen til claude-everywhere!
+Velkommen til c-marketing!
 
 Dette er et markedsføringsplugin for Claude Code som hjelper deg med å:
 - Planlegge og gjennomføre kampanjer fra brief til ferdig innhold
@@ -28,12 +28,12 @@ Dette er et markedsføringsplugin for Claude Code som hjelper deg med å:
 - Kvalitetssikre alt innhold mot norske språkregler og beste praksis
 
 Tilgjengelige kommandoer:
-- /claude-everywhere:onboarding — dette oppsettet
-- /claude-everywhere:campaign <tema> — full kampanjeproduksjon
-- /claude-everywhere:brief <tema> — lag et kampanjebrief
-- /claude-everywhere:article <tema> — skriv en artikkel
-- /claude-everywhere:linkedin <tema> — skriv et LinkedIn-innlegg
-- /claude-everywhere:profile <domene> — generer klientprofil fra nettkilder
+- /c-marketing:onboarding — dette oppsettet
+- /c-marketing:campaign <tema> — full kampanjeproduksjon
+- /c-marketing:brief <tema> — lag et kampanjebrief
+- /c-marketing:article <tema> — skriv en artikkel
+- /c-marketing:linkedin <tema> — skriv et LinkedIn-innlegg
+- /c-marketing:profile <domene> — generer klientprofil fra nettkilder
 
 La oss komme i gang med oppsettet!
 ```
@@ -89,7 +89,7 @@ Vis følgende melding:
 ```
 Vil du at jeg genererer en klientprofil automatisk fra nettkilder?
 
-Kjør: /claude-everywhere:profile <domene>
+Kjør: /c-marketing:profile <domene>
 
 En profil inneholder tone of voice, målgruppe, CTA-mønstre og konkurranseanalyse — alt som trengs for å produsere innhold som matcher klientens merkevare.
 ```
@@ -122,13 +122,13 @@ Opprettet:
   clients/<slug>/templates/
 
 Neste steg — nyttige kommandoer:
-  /claude-everywhere:campaign <tema>  — full kampanjeproduksjon med brief, innhold og bilder
-  /claude-everywhere:brief <tema>     — lag et kampanjebrief
-  /claude-everywhere:article <tema>   — skriv en artikkel
-  /claude-everywhere:linkedin <tema>  — skriv et LinkedIn-innlegg
+  /c-marketing:campaign <tema>  — full kampanjeproduksjon med brief, innhold og bilder
+  /c-marketing:brief <tema>     — lag et kampanjebrief
+  /c-marketing:article <tema>   — skriv en artikkel
+  /c-marketing:linkedin <tema>  — skriv et LinkedIn-innlegg
 
 Tips: Start med å lage en klientprofil for best mulig innholdskvalitet:
-  /claude-everywhere:profile <domene>
+  /c-marketing:profile <domene>
 ```
 
 ## Regler

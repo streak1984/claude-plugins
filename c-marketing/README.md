@@ -1,22 +1,22 @@
-# claude-everywhere
+# c-marketing
 
 Content marketing plugin for Claude Code and Cowork. Campaigns, articles, ads, social media, newsletters, and more — all in Norwegian Bokmål by default.
 
-Designed for teams and agencies. Install the plugin, run `/claude-everywhere:onboarding`, and start producing campaigns.
+Designed for teams and agencies. Install the plugin, run `/c-marketing:onboarding`, and start producing campaigns.
 
 ## Installation
 
 **Development / testing:**
 
 ```bash
-claude --plugin-dir ./claude-everywhere
+claude --plugin-dir ./c-marketing
 ```
 
 **Via marketplace:**
 
 ```bash
-claude plugin marketplace add <org>/claude-everywhere
-claude plugin install claude-everywhere
+claude plugin marketplace add <org>/c-marketing
+claude plugin install c-marketing
 ```
 
 ## Commands
@@ -43,7 +43,7 @@ claude plugin install claude-everywhere
 ## Getting Started
 
 ```
-/claude-everywhere:onboarding
+/c-marketing:onboarding
 ```
 
 The onboarding command walks you through:
@@ -54,7 +54,7 @@ The onboarding command walks you through:
 After onboarding, run your first campaign:
 
 ```
-/claude-everywhere:campaign "smartlading for elbiler"
+/c-marketing:campaign "smartlading for elbiler"
 ```
 
 ## Prerequisites
@@ -92,4 +92,4 @@ Norwegian Bokmål by default. English only when explicitly requested.
 
 ## Based on
 
-Adapted from [claude-everywhere](https://github.com/streak1984/claude-everywhere) — a portable Claude Code workspace for content marketing.
+Adapted from [c-marketing](https://github.com/streak1984/c-marketing) — a portable Claude Code workspace for content marketing.

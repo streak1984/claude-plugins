@@ -1,8 +1,8 @@
 {
   "plugins": [
     {
-      "name": "claude-everywhere",
-      "path": "claude-everywhere",
+      "name": "c-marketing",
+      "path": "c-marketing",
       "description": "Content marketing suite — campaigns, articles, ads, social, newsletters, and more. Norwegian Bokmål default.",
       "keywords": ["marketing", "content", "campaigns", "norwegian", "ads", "social-media"]
     }
