@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "stock-images": {
+      "command": "npx",
+      "args": ["-y", "stock-images-mcp"],
+      "env": {
+        "PEXELS_API_KEY": "${PEXELS_API_KEY}"
+      }
+    }
+  }
+}

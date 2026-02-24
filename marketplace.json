@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    {
+      "name": "claude-everywhere",
+      "path": "claude-everywhere",
+      "description": "Content marketing suite — campaigns, articles, ads, social, newsletters, and more. Norwegian Bokmål default.",
+      "keywords": ["marketing", "content", "campaigns", "norwegian", "ads", "social-media"]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "claude-everywhere",
+  "version": "1.0.0",
+  "description": "Content marketing suite — campaigns, articles, ads, social, newsletters, and more. Norwegian Bokmål default.",
+  "author": {
+    "name": "streak1984"
+  },
+  "repository": "https://github.com/streak1984/claude-everywhere",
+  "license": "MIT",
+  "keywords": ["marketing", "content", "campaigns", "norwegian", "ads", "social-media"]
+}
