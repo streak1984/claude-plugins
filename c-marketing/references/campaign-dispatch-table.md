@@ -43,7 +43,7 @@ Dispatch the `image-curator` agent IN PARALLEL with the content writers in Fase 
 - **Client profile**: For merkevarekontekst
 - **Content types**: Hvilke innholdstyper som er valgt (artikkel, nyhetsbrev, annonser, osv.)
 
-Agenten bruker Pexels MCP-serveren direkte (`mcp__stock-images__search_images` + `mcp__stock-images__download_image`) for å finne og laste ned relevante bilder.
+Agenten bruker Pexels API-skriptet (`node ${CLAUDE_PLUGIN_ROOT}/scripts/pexels.js`) for å søke og laste ned relevante bilder.
 
 Etter at image-curator er ferdig, oppdater innholdsfiler:
 - `article.md`: Sett `heroImage` i frontmatter

@@ -47,14 +47,6 @@ Generate these formats per platform:
 - Max 8-10 words
 - Position: center or bottom
 
-## Engagement Ranges (realistic, varied)
-- Feed reactions: 100-500
-- Feed comments: 10-50
-- Feed shares: 5-25
-- Carousel reactions: 80-300
-- Carousel comments: 10-40
-- Stories: no visible engagement
-
 ## Carousel Narrative Arc
 
 Build an emotional arc across carousel cards:
@@ -63,10 +55,6 @@ Build an emotional arc across carousel cards:
 - **Last card (CTA):** Resolution + clear next step
 - Each card should make the reader want to swipe. If they can stop at card 2 and feel satisfied, the arc is weak.
 
-## Engagement Note
-
-Engagement numbers should feel organic — avoid perfectly round numbers. 342 reactions feels real. 350 does not. Vary the ratios between reactions/comments/shares based on content type (controversial → more comments, inspirational → more shares).
-
 ## JSON Structure
 
-Use the exact JSON format from the /ad skill. Fill `page` defaults from client profile.
+Use the exact JSON format from the /ad command. All fields use snake_case. Fill `defaults` (flat: `page_name`, `profile_image`, `follower_count`) from client profile.

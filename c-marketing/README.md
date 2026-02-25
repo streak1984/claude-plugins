@@ -59,7 +59,7 @@ After onboarding, run your first campaign:
 
 ## Prerequisites
 
-- **Pexels API key** for stock images. Get one free at [pexels.com/api](https://www.pexels.com/api/). Set as environment variable: `export PEXELS_API_KEY=your-key-here`
+- **Pexels API key** for stock images. Get one free at [pexels.com/api](https://www.pexels.com/api/). The `/onboarding` command will ask for the key and save it to `.c-marketing.json`.
 
 ## Workspace Layout
 

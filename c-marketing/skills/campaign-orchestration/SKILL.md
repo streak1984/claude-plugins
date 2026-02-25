@@ -147,7 +147,7 @@ Brukeren gjennomgår innholdet og gir tilbakemelding. Hovedagenten redigerer fil
 ## Regler
 
 - Briefen er interaktiv — alltid vent på godkjenning
-- **Etter brief-godkjenning kjører alt autonomt.** Research, innholdsproduksjon, bildesøk — ingen stopp-punkter. Sub-agenter produserer førsteutkast. Bilder hentes via Pexels MCP. Brukeren ser resultatet i Fase 5.
+- **Etter brief-godkjenning kjører alt autonomt.** Research, innholdsproduksjon, bildesøk — ingen stopp-punkter. Sub-agenter produserer førsteutkast. Bilder hentes via Pexels API-skriptet. Brukeren ser resultatet i Fase 5.
 - Sub-agenter produserer førsteutkast uten å spørre brukeren
 - Alle innholdstyper er valgfrie — kampanjen kan bestå av bare artikkel + LinkedIn, bare annonser, eller alle typer
 - Research blokkerer innholdsproduksjon hvis den er valgt

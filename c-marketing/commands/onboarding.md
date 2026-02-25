@@ -114,9 +114,16 @@ Dette steget er valgfritt, men anbefalt for best mulig innholdskvalitet.
 
 ### Steg 7 — API-nøkler
 
-Sjekk om `$PEXELS_API_KEY` miljøvariabel er satt:
-- Hvis satt: bekreft at den fungerer og gå videre
-- Hvis ikke satt: spør brukeren om Pexels API-nøkkelen
+Spør brukeren om Pexels API-nøkkelen:
+
+```
+For stockbilder i kampanjer bruker vi Pexels.
+Hent gratis nøkkel på: https://www.pexels.com/api/
+
+Lim inn nøkkelen din (eller trykk Enter for å hoppe over):
+```
+
+**Vent på svar fra brukeren.**
 
 Når nøkkelen er oppgitt, lagre den til `.c-marketing.json` i arbeidsområde-roten:
 
@@ -126,14 +133,20 @@ Når nøkkelen er oppgitt, lagre den til `.c-marketing.json` i arbeidsområde-ro
 }
 ```
 
-Vis veiledning:
+Hvis `.c-marketing.json` allerede finnes, les den først og oppdater bare `pexels_api_key`-feltet.
+
+Bekreft:
 
 ```
-For stockbilder i kampanjer bruker vi Pexels.
-Hent gratis nøkkel på: https://www.pexels.com/api/
-
 API-nøkkelen er lagret i .c-marketing.json i arbeidsområdet ditt.
 Uten denne nøkkelen vil bildesøk i kampanjer bli hoppet over.
+```
+
+Hvis brukeren hopper over, informer:
+
+```
+Ingen API-nøkkel oppgitt. Bildesøk vil bli hoppet over i kampanjer.
+Du kan legge til nøkkelen senere ved å kjøre /c-marketing:onboarding på nytt.
 ```
 
 ### Steg 8 — Oppsummering

@@ -232,9 +232,11 @@ Les `clients/_template/profile.md` for eksakt format. Map funnene slik:
 | `audience.pain` | Mest nevnte fra `website_analysis.audience_signals.pain_points` |
 | `audience.desire` | Mest nevnte fra `website_analysis.audience_signals.desires` |
 | `cta_patterns` | `website_analysis.cta_examples[].text` (velg 2-3 representative) |
-| `defaults.page.name` | `website_analysis.company_name` |
-| `defaults.page.followerCount` | `social_analysis.linkedin.follower_count` |
-| `defaults.page.profileImageUrl` | Default: `assets/images/logo.png` |
+| `defaults.page_name` | `website_analysis.company_name` |
+| `defaults.profile_image` | Default: `https://placehold.co/96x96` |
+| `defaults.follower_count` | `social_analysis.linkedin.follower_count` (streng med enhet, f.eks. `"4 823 følgere"`) |
+| `defaults.author_name` | `website_analysis.sender_name` → `social_analysis.founder.name` |
+| `defaults.author_headline` | `social_analysis.linkedin.headline` → `""` |
 | **Merkevarestemme** | Skriv basert på `tone_observations` med `sample_quotes` som bevis |
 | **Visuelle retningslinjer** | `website_analysis.visual_notes` |
 | **Nøkkeltemaer** | `website_analysis.blog_topics` + `website_analysis.services` |
@@ -328,7 +330,7 @@ Aktiveres med `/profile --enrich <slug>`.
 
    Utfylt: name, domain, language, tone, audience
    Mangler: sender_name, cta_patterns, Konkurrenter, Begrensninger
-   Kan oppdateres: followerCount (sist: X), Nøkkeltemaer
+   Kan oppdateres: follower_count (sist: X), Nøkkeltemaer
 
    Vil du at jeg scraper for de manglende/utdaterte feltene?
    ```

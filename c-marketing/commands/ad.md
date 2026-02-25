@@ -69,7 +69,7 @@ Presenter konseptene. **Vent pa godkjenning for du genererer JSON.**
 
 ### 3. Generer JSON
 
-**Med klientprofil:** Fyll `defaults.page` fra profilens `defaults`-seksjon. Bruk profilens tone for plattformtilpasset kopi.
+**Med klientprofil:** Fyll `defaults` fra profilens `defaults`-seksjon. Bruk profilens tone for plattformtilpasset kopi.
 
 Skriv validert JSON til kampanjemappen.
 
@@ -78,16 +78,15 @@ Skriv validert JSON til kampanjemappen.
 ```json
 {
   "meta": {
-    "generated": "YYYY-MM-DD",
-    "brief": "Kort beskrivelse av briefen",
-    "version": 1
+    "campaign": "Kampanjenavn",
+    "client": "Klientnavn",
+    "date": "YYYY-MM-DD",
+    "language": "nb"
   },
   "defaults": {
-    "page": {
-      "name": "Firmanavn",
-      "profileImageUrl": "https://...",
-      "followerCount": 12400
-    }
+    "page_name": "Firmanavn",
+    "profile_image": "https://...",
+    "follower_count": "4 823 følgere"
   },
   "ads": [...]
 }
@@ -98,79 +97,84 @@ Skriv validert JSON til kampanjemappen.
 **Feed-annonse:**
 ```json
 {
+  "platform": "facebook",
   "format": "feed",
-  "platform": "facebook|linkedin",
-  "primaryText": "Annonseteksten...",
-  "media": { "imageUrl": "https://..." },
+  "primary_text": "Annonseteksten...",
   "headline": "Overskrift",
-  "description": "Beskrivelse (valgfritt)",
-  "displayUrl": "domene.no",
-  "cta": "Les mer",
-  "engagement": { "reactions": 342, "comments": 28, "shares": 15 }
+  "description": "Beskrivelse",
+  "cta_text": "Les mer",
+  "image_url": "images/fb-ad-filnavn.jpg",
+  "display_url": "domene.no",
+  "link_url": "https://domene.no/landingsside"
 }
 ```
 
 **Karusell-annonse:**
 ```json
 {
+  "platform": "facebook",
   "format": "carousel",
-  "platform": "facebook|linkedin",
-  "primaryText": "Annonseteksten...",
+  "primary_text": "Annonseteksten...",
   "cards": [
     {
-      "imageUrl": "https://...",
+      "image_url": "images/carousel-kort.jpg",
       "headline": "Kort overskrift",
       "description": "Beskrivelse",
-      "cta": "Les mer"
+      "cta_text": "Les mer"
     }
   ],
-  "cta": "Hovedhandling",
-  "engagement": { "reactions": 156, "comments": 19, "shares": 8 }
+  "display_url": "domene.no",
+  "link_url": "https://domene.no/landingsside"
 }
 ```
 
 **Story-annonse:**
 ```json
 {
+  "platform": "facebook",
   "format": "stories",
-  "platform": "facebook|linkedin",
-  "media": { "imageUrl": "https://..." },
-  "overlay": {
-    "headline": "Kort, slagkraftig tekst",
-    "position": "top|center|bottom"
-  },
-  "swipeUpLabel": "Swipe opp for a lese mer",
-  "cta": "Prov gratis"
+  "image_url": "images/stories-filnavn.jpg",
+  "overlay_headline": "Kort, slagkraftig tekst",
+  "overlay_position": "center",
+  "cta_text": "Les mer",
+  "link_url": "https://domene.no/landingsside"
 }
 ```
 
 **Google Search-annonse:**
 ```json
 {
-  "format": "search",
   "platform": "google",
+  "format": "search",
   "headlines": ["Overskrift maks 30 tegn", "Fordel + sokeord", "Tydelig CTA"],
   "descriptions": [
     "Beskrivelse opptil 90 tegn. Spesifikk verdi og handling.",
     "Alternativ beskrivelse med annen vinkel. Sterk CTA."
   ],
-  "displayUrl": "domene.no",
+  "display_url": "domene.no",
   "paths": ["tjenester", "prov-gratis"],
-  "sitelinks": ["Priser", "Om oss", "Kontakt"]
+  "sitelinks": [
+    { "headline": "Priser", "description": "Se våre priser og pakker" },
+    { "headline": "Om oss", "description": "Bli kjent med teamet" }
+  ],
+  "link_url": "https://domene.no/landingsside"
 }
 ```
 
 **Google Display-annonse:**
 ```json
 {
-  "format": "display",
   "platform": "google",
+  "format": "display",
   "size": "300x250",
-  "media": { "imageUrl": "https://placehold.co/300x250" },
   "headline": "Kort overskrift (maks 30 tegn)",
   "description": "Beskrivelse maks 90 tegn",
-  "cta": "Prov gratis",
-  "logoUrl": "https://placehold.co/100x100"
+  "cta_text": "Prov gratis",
+  "cta_color": "#4285F4",
+  "background_color": "#333333",
+  "image_url": "images/display-filnavn.jpg",
+  "logo_url": "https://placehold.co/100x100",
+  "link_url": "https://domene.no/landingsside"
 }
 ```
 
@@ -178,7 +182,6 @@ Skriv validert JSON til kampanjemappen.
 - Plattformnativ kopi — ikke samme tekst pa Facebook og LinkedIn
 - Facebook: kortere, mer uformell, emosjonell appell
 - LinkedIn: profesjonell, datadrevet, B2B-fokusert
-- Realistiske, varierte engasjementstall (ikke runde tall)
 - Karusell: bygg narrativ bue over kortene — forste kort = hook, siste = CTA
 - Stories: minimal tekst i overlay — maks 8-10 ord
 - Google Search: fokuser pa sokeintensjon — overskrifter matcher sokeord, beskrivelser gir spesifikk verdi
@@ -191,6 +194,10 @@ Skriv validert JSON til kampanjemappen.
   - Karusell LinkedIn: `800x1000` (4:5)
   - Stories: `1080x1920` (9:16)
   - Google Display: `300x250`, `728x90`, `160x600`, eller `300x600`
+- Alle felt bruker snake_case — ikke camelCase
+- `link_url` er obligatorisk pa alle annonser
+- `image_url` er flat — ikke nestet under `media`
+- Sitelinks er objekter med `headline` og `description` — ikke bare strenger
 
 ### 4. Forhandsvisning og iterasjon
 
