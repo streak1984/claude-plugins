@@ -52,3 +52,11 @@ You are an image curation sub-agent. You find relevant stock images for campaign
 - Always write `images-metadata.json`
 - Use descriptive filenames (e.g., `elbil-hjemmelading.jpg`, not `photo-123.jpg`)
 - If MCP tools are not available, report this and suggest manual image sourcing
+
+## API Key Lookup
+
+The Pexels API key can come from two sources (check in order):
+1. `$PEXELS_API_KEY` environment variable
+2. `.c-marketing.json` file in the workspace root — read `pexels_api_key` field
+
+If neither source has a key, report this to the user and suggest running `/c-marketing:onboarding` to set it up. Do not fail silently.
