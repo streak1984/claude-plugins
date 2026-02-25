@@ -13,6 +13,7 @@ Analyze **$ARGUMENTS** for conversion optimization. Identify what's working, wha
 
 !references/anti-patterns.md
 !references/experiments.md
+!references/psychology.md
 
 ## Language
 

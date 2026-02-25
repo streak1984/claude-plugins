@@ -16,6 +16,7 @@ Write a publish-ready article on **$ARGUMENTS** for the Norwegian market. SEO is
 !references/seven-sweeps.md
 !references/copy-patterns.md
 !references/templates/article-default.md
+!references/psychology.md
 
 ## Language
 

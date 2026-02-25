@@ -15,6 +15,7 @@ Write a publish-ready newsletter issue on **$ARGUMENTS**. Personal, direct, and 
 !references/seven-sweeps.md
 !references/copy-patterns.md
 !references/templates/newsletter-default.md
+!references/psychology.md
 
 ## Language
 

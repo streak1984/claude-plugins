@@ -15,6 +15,7 @@ Design og skriv e-postsekvenser for **$ARGUMENTS**. Strukturerte drip-kampanjer 
 !references/copy-patterns.md
 !references/templates/email-sequence-default.md
 !references/templates/email-sequence-templates.md
+!references/psychology.md
 
 ## Language
 

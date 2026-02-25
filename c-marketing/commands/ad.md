@@ -13,6 +13,7 @@ Lag betalte annonsekampanjer for Facebook, LinkedIn og Google for **$ARGUMENTS**
 
 !references/anti-patterns.md
 !references/templates/ad-default.md
+!references/psychology.md
 
 ## Language
 

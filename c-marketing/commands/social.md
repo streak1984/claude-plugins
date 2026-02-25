@@ -13,6 +13,7 @@ Create publish-ready social media posts on **$ARGUMENTS**. Platform-native, not 
 
 !references/anti-patterns.md
 !references/templates/social-default.md
+!references/psychology.md
 
 ## Language
 

@@ -14,6 +14,7 @@ Skriv et publiseringsklart organisk LinkedIn-innlegg om **$ARGUMENTS**. Personli
 !references/anti-patterns.md
 !references/copy-patterns.md
 !references/templates/linkedin-default.md
+!references/psychology.md
 
 ## Language
 
