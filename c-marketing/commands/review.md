@@ -25,6 +25,10 @@ Hvis `$ARGUMENTS` er en fil, gjennomgå den filen. Hvis det er en kampanjemappe,
 
 Finn relevant klientprofil fra `clients/<slug>/profile.md`. Bruk den for tone, målgruppe og merkevare-kontekst.
 
+### 2b. Les stilguide
+
+Sjekk om `clients/<slug>/style-guide.md` finnes. Hvis ja, les den — brukes for stemme-matching i gjennomgangen.
+
 ### 3. Gjennomgang
 
 Gå gjennom hver kategori. Rapporter bare **faktiske funn** — hopp over kategorier uten merknader.
@@ -44,6 +48,13 @@ Gå gjennom hver kategori. Rapporter bare **faktiske funn** — hopp over katego
 - Variasjon i setningslengde?
 - Aktiv stemme fremfor passiv?
 - Konkret fremfor abstrakt?
+
+**Stilguide-samsvar** (kun hvis stilguide finnes):
+- Matcher teksten stemmesammendraget i stilguiden?
+- Følger den "Skriv slik / Ikke slik"-eksemplene?
+- Er ordforrådet i tråd med stilguidens preferanser?
+- Konsistent setningslengde-variasjon? Flagg hvis for uniform (spesifikt AI-signal).
+- Strukturell forutsigbarhet? Flagg hvis strukturen er åpenbart malt.
 
 **Fakta og kilder:**
 - Er påstander støttet av data eller kilder?
