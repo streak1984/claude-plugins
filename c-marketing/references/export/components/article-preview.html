@@ -1,0 +1,180 @@
+<!-- Article Preview Component -->
+<div class="article-preview-wrapper" style="background:#ffffff;padding:32px 24px;display:flex;flex-direction:column;align-items:center;font-family:-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;">
+  <style scoped>
+    .article-preview-wrapper * { box-sizing: border-box; }
+    .article-preview-wrapper a { color: #0A66C2; text-decoration: underline; }
+    .article-preview-wrapper a:hover { color: #004182; }
+
+    /* Article body typography */
+    .article-body { font-family: Georgia, 'Times New Roman', serif; }
+    .article-body h1 {
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #1a1a2e;
+      margin: 0 0 8px 0;
+    }
+    .article-body h2 {
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #1a1a2e;
+      margin: 40px 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .article-body h3 {
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin: 32px 0 12px 0;
+    }
+    .article-body p {
+      font-size: 18px;
+      line-height: 1.67;
+      color: #333333;
+      margin: 0 0 20px 0;
+    }
+    .article-body blockquote {
+      border-left: 3px solid #e0e0e0;
+      padding-left: 20px;
+      margin: 24px 0;
+      color: #555555;
+      font-style: italic;
+    }
+    .article-body blockquote p {
+      color: #555555;
+    }
+    .article-body ul,
+    .article-body ol {
+      font-size: 18px;
+      line-height: 1.67;
+      color: #333333;
+      margin: 16px 0;
+      padding-left: 24px;
+    }
+    .article-body li {
+      margin-bottom: 8px;
+    }
+    .article-body code {
+      font-family: 'Courier New', monospace;
+      background: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 16px;
+    }
+    .article-body pre {
+      background: #f5f5f5;
+      padding: 16px 20px;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 24px 0;
+    }
+    .article-body pre code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .article-body strong {
+      font-weight: 700;
+    }
+    .article-body em {
+      font-style: italic;
+    }
+    .article-body hr {
+      border: 0;
+      height: 1px;
+      background: #e0e0e0;
+      margin: 40px 0;
+    }
+    .article-body img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin: 24px 0;
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 16px;
+    }
+    .article-body th,
+    .article-body td {
+      border: 1px solid #e0e0e0;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .article-body th {
+      background: #f8f9fa;
+      font-weight: 600;
+    }
+
+    /* Metadata card keyword pills */
+    .meta-keyword-pill {
+      display: inline-block;
+      background: #e8f4f8;
+      color: #0A66C2;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      margin: 2px 4px 2px 0;
+      line-height: 1.6;
+    }
+  </style>
+
+  <div style="max-width:720px;width:100%;">
+
+    <!-- ========== METADATA CARD ========== -->
+    <div style="background:#f8f9fa;border:1px solid #e0e0e0;border-radius:8px;padding:16px 20px;margin-bottom:24px;">
+      <div style="font-size:14px;font-weight:600;color:#1a1a2e;margin-bottom:8px;">Artikkeldata</div>
+
+      <!-- Tittel -->
+      <div style="font-size:13px;color:#65676b;margin-bottom:6px;">
+        <span style="font-weight:600;">Tittel:</span> {{TITLE}}
+      </div>
+
+      <!-- Meta-beskrivelse -->
+      <div style="font-size:13px;color:#65676b;margin-bottom:6px;">
+        <span style="font-weight:600;">Meta-beskrivelse:</span> {{DESCRIPTION}}
+      </div>
+
+      <!-- URL-slug -->
+      <div style="font-size:13px;color:#65676b;margin-bottom:6px;">
+        <span style="font-weight:600;">URL-slug:</span>
+        <span style="font-family:'Courier New',monospace;background:#f0f0f0;padding:2px 6px;border-radius:3px;">{{SLUG}}</span>
+      </div>
+
+      <!-- Sokeord -->
+      <div style="font-size:13px;color:#65676b;margin-bottom:6px;">
+        <span style="font-weight:600;">Sokeord:</span>
+        <span style="display:inline;margin-left:4px;">{{KEYWORDS}}</span>
+      </div>
+
+      <!-- Dato -->
+      <div style="font-size:13px;color:#65676b;">
+        <span style="font-weight:600;">Dato:</span> {{DATE}}
+      </div>
+    </div>
+
+    <!-- ========== HERO IMAGE (optional) ========== -->
+    <!-- Remove or keep this block depending on whether a hero image is available -->
+    <img src="{{HERO_IMAGE}}" alt="" style="width:100%;max-height:400px;object-fit:cover;border-radius:8px;margin:0 0 24px 0;display:block;" onerror="this.style.display='none';">
+
+    <!-- ========== READING TIME BADGE ========== -->
+    <div style="display:flex;justify-content:flex-end;margin-bottom:16px;">
+      <span style="background:#f0f0f0;padding:4px 12px;border-radius:12px;font-size:13px;color:#65676b;">{{READING_TIME}} min lesetid</span>
+    </div>
+
+    <!-- ========== ARTICLE BODY ========== -->
+    <div class="article-body" style="max-width:680px;margin:0 auto;">
+      {{ARTICLE_HTML}}
+    </div>
+
+  </div>
+</div>

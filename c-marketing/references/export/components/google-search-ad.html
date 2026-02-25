@@ -1,0 +1,228 @@
+<div class="gs-ad-component">
+  <style>
+    .gs-ad-component {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      background: #ffffff;
+      padding: 0;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .gs-ad-component * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Sponset header */
+    .gs-ad-sponsored-header {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .gs-ad-sponsored-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #202124;
+      line-height: 18px;
+    }
+
+    .gs-ad-sponsored-info {
+      font-size: 14px;
+      color: #70757a;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    /* Ad block */
+    .gs-ad-block {
+      display: block;
+    }
+
+    /* URL row */
+    .gs-ad-url-row {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .gs-ad-favicon {
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      border-radius: 50%;
+      background: #f1f3f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      margin-top: 1px;
+    }
+
+    .gs-ad-favicon svg {
+      width: 16px;
+      height: 16px;
+      fill: #70757a;
+    }
+
+    .gs-ad-url-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .gs-ad-site-name {
+      font-size: 14px;
+      font-weight: 400;
+      color: #202124;
+      line-height: 20px;
+    }
+
+    .gs-ad-display-url {
+      font-size: 12px;
+      color: #4d5156;
+      line-height: 18px;
+    }
+
+    .gs-ad-breadcrumb-sep {
+      margin: 0 2px;
+    }
+
+    .gs-ad-dots-menu {
+      margin-left: 8px;
+      margin-top: 2px;
+      cursor: pointer;
+      color: #70757a;
+      font-size: 16px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gs-ad-dots-menu svg {
+      width: 16px;
+      height: 16px;
+      fill: #70757a;
+    }
+
+    /* Headlines */
+    .gs-ad-headlines {
+      font-size: 20px;
+      font-weight: 400;
+      color: #1a0dab;
+      line-height: 26px;
+      margin: 4px 0;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+
+    .gs-ad-headlines:hover {
+      text-decoration: underline;
+    }
+
+    /* Descriptions */
+    .gs-ad-descriptions {
+      font-size: 14px;
+      line-height: 22px;
+      color: #4d5156;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Sitelinks grid */
+    .gs-ad-sitelinks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-top: 8px;
+      border: 1px solid #ebebeb;
+    }
+
+    .gs-ad-sitelink {
+      padding: 8px 12px;
+      border-bottom: 1px solid #ebebeb;
+      border-right: 1px solid #ebebeb;
+    }
+
+    .gs-ad-sitelink:nth-child(2n) {
+      border-right: none;
+    }
+
+    .gs-ad-sitelink:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    .gs-ad-sitelink:nth-last-child(1):nth-child(2n+1) {
+      border-bottom: none;
+    }
+
+    .gs-ad-sitelink-title {
+      font-size: 14px;
+      color: #1a0dab;
+      line-height: 20px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .gs-ad-sitelink-title:hover {
+      text-decoration: underline;
+    }
+
+    .gs-ad-sitelink-desc {
+      font-size: 12px;
+      color: #4d5156;
+      line-height: 18px;
+      margin-top: 2px;
+    }
+  </style>
+
+  <!-- Sponset header -->
+  <div class="gs-ad-sponsored-header">
+    <span class="gs-ad-sponsored-label">Sponset</span>
+    <span class="gs-ad-sponsored-info" title="Om denne annonsen">&#9432;</span>
+  </div>
+
+  <!-- Ad block -->
+  <div class="gs-ad-block">
+
+    <!-- URL row -->
+    <div class="gs-ad-url-row">
+      <div class="gs-ad-favicon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      </div>
+      <div class="gs-ad-url-text">
+        <div class="gs-ad-site-name">{{DISPLAY_URL}}</div>
+        <div class="gs-ad-display-url">https://{{DISPLAY_URL}}<span class="gs-ad-breadcrumb-sep"> › </span>{{PATHS}}</div>
+      </div>
+      <div class="gs-ad-dots-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+      </div>
+    </div>
+
+    <!-- Headlines -->
+    <a class="gs-ad-headlines" href="#">{{HEADLINES}}</a>
+
+    <!-- Descriptions -->
+    <div class="gs-ad-descriptions">{{DESCRIPTIONS}}</div>
+
+    <!-- Sitelinks (optional, remove this block if not needed) -->
+    <div class="gs-ad-sitelinks">
+      {{SITELINKS}}
+      <!--
+        Repeat the block below for each sitelink (max 4 in a 2x2 grid):
+
+        <div class="gs-ad-sitelink">
+          <a class="gs-ad-sitelink-title" href="#">{{SITELINK_TITLE}}</a>
+          <div class="gs-ad-sitelink-desc">{{SITELINK_DESC}}</div>
+        </div>
+      -->
+    </div>
+
+  </div>
+</div>

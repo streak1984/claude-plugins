@@ -1,0 +1,409 @@
+<!-- linkedin-sponsored-ad component -->
+<div class="component-card" id="linkedin-sponsored-ad">
+  <h3>LinkedIn Sponsored Content</h3>
+  <div style="background:#f4f2ee;padding:24px;display:flex;justify-content:center;">
+    <style>
+      .li-sponsored {
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        background: #ffffff;
+        border: 1px solid #e0dfdc;
+        border-radius: 8px;
+        max-width: 552px;
+        width: 100%;
+        overflow: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Header */
+      .li-sponsored__header {
+        display: flex;
+        align-items: flex-start;
+        padding: 12px 16px;
+        gap: 8px;
+      }
+
+      .li-sponsored__logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 4px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .li-sponsored__header-info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .li-sponsored__page-name {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        color: rgba(0,0,0,0.9);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .li-sponsored__page-name:hover {
+        color: #0A66C2;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .li-sponsored__meta {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        color: rgba(0,0,0,0.6);
+      }
+
+      .li-sponsored__promoted {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        color: rgba(0,0,0,0.6);
+      }
+
+      .li-sponsored__menu-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-left: auto;
+      }
+
+      .li-sponsored__menu-btn:hover {
+        background: rgba(0,0,0,0.08);
+      }
+
+      .li-sponsored__menu-btn svg {
+        width: 24px;
+        height: 24px;
+        fill: rgba(0,0,0,0.6);
+      }
+
+      /* Body text */
+      .li-sponsored__body {
+        padding: 0 16px 12px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: rgba(0,0,0,0.9);
+        white-space: pre-line;
+      }
+
+      .li-sponsored__see-more {
+        color: rgba(0,0,0,0.6);
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        font-family: inherit;
+      }
+
+      .li-sponsored__see-more:hover {
+        color: #0A66C2;
+        text-decoration: underline;
+      }
+
+      /* Media */
+      .li-sponsored__media {
+        width: 100%;
+        aspect-ratio: 1.91 / 1;
+        display: block;
+        object-fit: cover;
+        background: #e8e6e3;
+      }
+
+      /* Link preview */
+      .li-sponsored__link-preview {
+        background: #f3f2ef;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .li-sponsored__link-info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .li-sponsored__headline {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: rgba(0,0,0,0.9);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+
+      .li-sponsored__display-url {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        color: rgba(0,0,0,0.6);
+        margin-top: 2px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .li-sponsored__cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #0A66C2;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        padding: 6px 16px;
+        border-radius: 16px;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap;
+        font-family: inherit;
+        flex-shrink: 0;
+      }
+
+      .li-sponsored__cta:hover {
+        background: #004182;
+      }
+
+      /* Engagement bar */
+      .li-sponsored__engagement {
+        padding: 8px 16px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        color: rgba(0,0,0,0.6);
+      }
+
+      .li-sponsored__reactions {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .li-sponsored__reaction-icons {
+        display: flex;
+        align-items: center;
+      }
+
+      .li-sponsored__reaction-icon {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: -2px;
+        font-size: 10px;
+        line-height: 1;
+      }
+
+      .li-sponsored__reaction-icon--like {
+        background: #0A66C2;
+      }
+
+      .li-sponsored__reaction-icon--celebrate {
+        background: #44712E;
+      }
+
+      .li-sponsored__reaction-icon--love {
+        background: #DF704D;
+      }
+
+      .li-sponsored__engagement-counts {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .li-sponsored__engagement-counts span {
+        cursor: pointer;
+      }
+
+      .li-sponsored__engagement-counts span:hover {
+        color: #0A66C2;
+        text-decoration: underline;
+      }
+
+      /* Divider */
+      .li-sponsored__divider {
+        height: 1px;
+        background: #e0dfdc;
+        margin: 8px 16px 0;
+      }
+
+      /* Action bar */
+      .li-sponsored__actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4px 8px 4px;
+      }
+
+      .li-sponsored__action-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 10px 8px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        color: rgba(0,0,0,0.6);
+        flex: 1;
+      }
+
+      .li-sponsored__action-btn:hover {
+        background: rgba(0,0,0,0.08);
+      }
+
+      .li-sponsored__action-btn svg {
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke: rgba(0,0,0,0.6);
+        stroke-width: 1.5;
+        flex-shrink: 0;
+      }
+    </style>
+
+    <div class="li-sponsored">
+
+      <!-- Header -->
+      <div class="li-sponsored__header">
+        <img class="li-sponsored__logo" src="{{PAGE_IMAGE}}" alt="{{PAGE_NAME}}">
+        <div class="li-sponsored__header-info">
+          <div class="li-sponsored__page-name">{{PAGE_NAME}}</div>
+          <div class="li-sponsored__meta">{{FOLLOWER_COUNT}} f&oslash;lgere</div>
+          <div class="li-sponsored__promoted">
+            <span>Forfremmet</span>
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="rgba(0,0,0,0.6)" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 12.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/>
+              <circle cx="8" cy="8" r="1"/>
+            </svg>
+          </div>
+        </div>
+        <button class="li-sponsored__menu-btn" aria-label="Meny">
+          <!-- Three-dot (more) icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="5" r="2"/>
+            <circle cx="12" cy="12" r="2"/>
+            <circle cx="12" cy="19" r="2"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Body text -->
+      <div class="li-sponsored__body">{{PRIMARY_TEXT}}<button class="li-sponsored__see-more">...se mer</button></div>
+
+      <!-- Media -->
+      <img class="li-sponsored__media" src="{{IMAGE_URL}}" alt="">
+
+      <!-- Link preview -->
+      <div class="li-sponsored__link-preview">
+        <div class="li-sponsored__link-info">
+          <div class="li-sponsored__headline">{{HEADLINE}}</div>
+          <div class="li-sponsored__display-url">{{DISPLAY_URL}}</div>
+        </div>
+        <button class="li-sponsored__cta">{{CTA_TEXT}}</button>
+      </div>
+
+      <!-- Engagement bar -->
+      <div class="li-sponsored__engagement">
+        <div class="li-sponsored__reactions">
+          <div class="li-sponsored__reaction-icons">
+            <span class="li-sponsored__reaction-icon li-sponsored__reaction-icon--like">
+              <svg width="10" height="10" viewBox="0 0 16 16" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.2 2.8a4 4 0 0 0-2.8-1.2c-.9 0-1.7.3-2.4 1L7 3.7l-1-1a3.5 3.5 0 0 0-5 0 3.5 3.5 0 0 0 0 5L7 14l6.2-6.2a4 4 0 0 0 0-5z"/>
+              </svg>
+            </span>
+            <span class="li-sponsored__reaction-icon li-sponsored__reaction-icon--celebrate">
+              <svg width="10" height="10" viewBox="0 0 16 16" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 0l2 5h5l-4 3.5 1.5 5L8 10.5 3.5 13.5 5 8.5 1 5h5z"/>
+              </svg>
+            </span>
+            <span class="li-sponsored__reaction-icon li-sponsored__reaction-icon--love">
+              <svg width="10" height="10" viewBox="0 0 16 16" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 1c2 0 3 1 4 3 1-2 2-3 4-3s4 2 4 4c0 4-8 10-8 10S0 9 0 5c0-2 2-4 4-4z"/>
+              </svg>
+            </span>
+          </div>
+          <span>{{REACTION_COUNT}}</span>
+        </div>
+        <div class="li-sponsored__engagement-counts">
+          <span>{{COMMENT_COUNT}} kommentarer</span>
+          <span>&middot;</span>
+          <span>{{SHARE_COUNT}} delinger</span>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="li-sponsored__divider"></div>
+
+      <!-- Action bar -->
+      <div class="li-sponsored__actions">
+        <!-- Like -->
+        <button class="li-sponsored__action-btn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.46 11l-3.91-3.91a7 7 0 0 1-1.69-2.74l-.49-1.47A2.76 2.76 0 0 0 10.76 1 2.75 2.75 0 0 0 8 3.74v1.12a9.19 9.19 0 0 0 .46 2.85L8.89 9H4.12A2.12 2.12 0 0 0 2 11.12a2.16 2.16 0 0 0 .92 1.76A2.11 2.11 0 0 0 2 14.62a2.14 2.14 0 0 0 1.28 2 2 2 0 0 0-.28 1 2.12 2.12 0 0 0 2 2.12v.14A2.12 2.12 0 0 0 7.12 22h7.49a8.08 8.08 0 0 0 3.58-.84l.31-.16H21V11z" stroke-linejoin="round"/>
+          </svg>
+          <span>Lik</span>
+        </button>
+
+        <!-- Comment -->
+        <button class="li-sponsored__action-btn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 9h10M7 13h6M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Kommenter</span>
+        </button>
+
+        <!-- Repost -->
+        <button class="li-sponsored__action-btn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 2l4 4-4 4M3 11V9a4 4 0 0 1 4-4h14M7 22l-4-4 4-4M21 13v2a4 4 0 0 1-4 4H3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Del</span>
+        </button>
+
+        <!-- Send -->
+        <button class="li-sponsored__action-btn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 3L14.5 21l-3.22-8.28L3 9.5 21 3z" stroke-linejoin="round"/>
+          </svg>
+          <span>Send</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

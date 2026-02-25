@@ -1,0 +1,359 @@
+<!-- Multi-Platform Social Media Cards Component -->
+<div class="social-cards-wrapper" style="display:flex;flex-direction:column;gap:24px;align-items:center;padding:24px;font-family:-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;">
+  <style scoped>
+    .social-cards-wrapper * { box-sizing: border-box; margin: 0; padding: 0; }
+    .social-cards-wrapper img { display: block; }
+
+    /* Platform label pills */
+    .social-platform-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .social-platform-label--ig {
+      background: linear-gradient(45deg, #FCAF45, #E4405F, #833AB4);
+    }
+    .social-platform-label--fb {
+      background: #1877F2;
+    }
+    .social-platform-label--x {
+      background: #0f1419;
+    }
+
+    /* Instagram action buttons */
+    .ig-action-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+    }
+    .ig-action-btn:hover svg {
+      opacity: 0.6;
+    }
+
+    /* Instagram hashtag styling */
+    .ig-hashtag {
+      color: #00376b;
+    }
+
+    /* Facebook action bar */
+    .fb-action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex: 1;
+      padding: 8px 0;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      color: #65676b;
+    }
+    .fb-action-btn:hover {
+      background: rgba(0,0,0,0.05);
+      border-radius: 4px;
+    }
+
+    /* X/Twitter engagement items */
+    .x-engagement-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .x-engagement-item:hover svg {
+      color: #1d9bf0;
+    }
+  </style>
+
+
+  <!-- ================================================================ -->
+  <!-- INSTAGRAM CARD                                                    -->
+  <!-- ================================================================ -->
+  <div style="width:100%;max-width:500px;">
+    <span class="social-platform-label social-platform-label--ig">
+      <!-- Instagram icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="#ffffff">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.08 4.08 0 011.47.958c.453.453.78.898.958 1.47.163.46.349 1.26.404 2.43.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.08 4.08 0 01-.958 1.47 4.08 4.08 0 01-1.47.958c-.46.163-1.26.349-2.43.404-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.08 4.08 0 01-1.47-.958 4.08 4.08 0 01-.958-1.47c-.163-.46-.349-1.26-.404-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.08 4.08 0 01.958-1.47A4.08 4.08 0 015.064 2.29c.46-.163 1.26-.349 2.43-.404C8.76 1.828 9.14 1.816 12 1.816zM12 0C8.741 0 8.333.014 7.053.072 5.775.13 4.903.333 4.14.63a5.88 5.88 0 00-2.126 1.384A5.88 5.88 0 00.63 4.14C.333 4.903.13 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.058 1.278.261 2.15.558 2.913a5.88 5.88 0 001.384 2.126A5.88 5.88 0 004.14 23.37c.763.297 1.635.5 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.058 2.15-.261 2.913-.558a5.88 5.88 0 002.126-1.384 5.88 5.88 0 001.384-2.126c.297-.763.5-1.635.558-2.913C23.986 15.667 24 15.259 24 12s-.014-3.667-.072-4.947c-.058-1.278-.261-2.15-.558-2.913a5.88 5.88 0 00-1.384-2.126A5.88 5.88 0 0019.86.63C19.097.333 18.225.13 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.163 6.163 0 100 12.325 6.163 6.163 0 000-12.325zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+      </svg>
+      Instagram
+    </span>
+
+    <div style="background:#ffffff;border:1px solid #dbdbdb;border-radius:8px;overflow:hidden;">
+
+      <!-- Header -->
+      <div style="display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid #efefef;">
+        <!-- Profile pic -->
+        <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(45deg,#FCAF45,#E4405F,#833AB4);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-right:10px;">
+          <div style="width:28px;height:28px;border-radius:50%;background:#ffffff;display:flex;align-items:center;justify-content:center;">
+            <div style="width:26px;height:26px;border-radius:50%;background:#efefef;"></div>
+          </div>
+        </div>
+        <!-- Username -->
+        <span style="font-size:14px;font-weight:600;color:#262626;flex:1;">{{IG_USERNAME}}</span>
+        <!-- Three-dot menu -->
+        <button style="background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#262626">
+            <circle cx="6" cy="12" r="2"/>
+            <circle cx="12" cy="12" r="2"/>
+            <circle cx="18" cy="12" r="2"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Image area (1:1 square) -->
+      <div style="position:relative;width:100%;padding-bottom:100%;background:#fafafa;overflow:hidden;">
+        <img src="{{IG_IMAGE}}" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"
+          onerror="this.style.display='none';">
+      </div>
+
+      <!-- Action row -->
+      <div style="display:flex;align-items:center;padding:8px 16px;">
+        <div style="display:flex;align-items:center;gap:12px;flex:1;">
+          <!-- Heart -->
+          <button class="ig-action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#262626" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+            </svg>
+          </button>
+          <!-- Comment -->
+          <button class="ig-action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#262626" stroke-width="2">
+              <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+            </svg>
+          </button>
+          <!-- Share / Send -->
+          <button class="ig-action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#262626" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </div>
+        <!-- Bookmark / Save -->
+        <button class="ig-action-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#262626" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Likes -->
+      <div style="padding:0 16px;font-size:14px;font-weight:600;color:#262626;">
+        {{IG_LIKE_COUNT}} liker dette
+      </div>
+
+      <!-- Caption -->
+      <div style="padding:4px 16px 12px 16px;font-size:14px;line-height:20px;color:#262626;">
+        <span style="font-weight:600;">{{IG_USERNAME}}</span> <span style="font-weight:400;">{{IG_CAPTION}}</span>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================================================================ -->
+  <!-- FACEBOOK ORGANIC CARD                                             -->
+  <!-- ================================================================ -->
+  <div style="width:100%;max-width:500px;">
+    <span class="social-platform-label social-platform-label--fb">
+      <!-- Facebook icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="#ffffff">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12S0 5.446 0 12.073c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+      Facebook
+    </span>
+
+    <div style="background:#ffffff;border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,0.1);overflow:hidden;">
+
+      <!-- Header -->
+      <div style="display:flex;align-items:flex-start;padding:12px 16px;">
+        <!-- Profile pic -->
+        <div style="width:40px;height:40px;border-radius:50%;background:#e4e6eb;flex-shrink:0;margin-right:10px;display:flex;align-items:center;justify-content:center;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#bec3c9">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </div>
+        <!-- Name and timestamp -->
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:15px;font-weight:600;color:#050505;line-height:20px;">{{FB_AUTHOR_NAME}}</div>
+          <div style="display:flex;align-items:center;gap:4px;margin-top:1px;">
+            <span style="font-size:13px;color:#65676b;line-height:16px;">{{FB_TIMESTAMP}}</span>
+            <span style="font-size:13px;color:#65676b;">·</span>
+            <!-- Globe icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="13" height="13" fill="#65676b">
+              <path d="M8 0a8 8 0 108 8 8 8 0 00-8-8zm5.91 7H11.1a14.7 14.7 0 00-1.18-4.76A6 6 0 0113.91 7zM8 1.06A13.26 13.26 0 019.54 7H6.46A13.26 13.26 0 018 1.06zM1.06 9h3.08A14.7 14.7 0 005.3 13.4 6 6 0 011.06 9zm.03-2a6 6 0 013.83-4.76A14.7 14.7 0 003.74 7H1.09zM8 14.94A13.26 13.26 0 016.46 9h3.08A13.26 13.26 0 018 14.94zm2.08-1.54A14.7 14.7 0 0011.26 9h2.65a6 6 0 01-3.83 4.4z"/>
+            </svg>
+          </div>
+        </div>
+        <!-- Three-dot menu -->
+        <button style="background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;flex-shrink:0;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#65676b">
+            <circle cx="6" cy="12" r="2"/>
+            <circle cx="12" cy="12" r="2"/>
+            <circle cx="18" cy="12" r="2"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Post text -->
+      <div style="padding:0 16px 12px 16px;font-size:15px;line-height:22px;color:#050505;white-space:pre-line;word-wrap:break-word;">{{FB_TEXT}}</div>
+
+      <!-- Optional image -->
+      <div style="width:100%;background:#f0f2f5;min-height:60px;">
+        <img src="{{FB_IMAGE}}" alt="" style="width:100%;display:block;object-fit:cover;"
+          onerror="this.parentElement.style.display='none';">
+      </div>
+
+      <!-- Reaction row -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <!-- Overlapping reaction emojis -->
+          <div style="display:flex;align-items:center;">
+            <!-- Like reaction -->
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#1877F2;border:2px solid #ffffff;position:relative;z-index:3;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="11" height="11" fill="#ffffff">
+                <path d="M8 0a8 8 0 108 8 8 8 0 00-8-8zm3.73 7.41l-.6 4.15a.72.72 0 01-.71.62H6.59a.72.72 0 01-.72-.72V7.31a.72.72 0 01.21-.51l2.7-2.77a.44.44 0 01.64.04.46.46 0 01.09.36l-.51 2.38h2.44a.72.72 0 01.71.83z"/>
+              </svg>
+            </span>
+            <!-- Heart reaction -->
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#F33E58;border:2px solid #ffffff;position:relative;z-index:2;margin-left:-4px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="11" height="11" fill="#ffffff">
+                <path d="M8 14s-5.5-3.5-5.5-7.5C2.5 4 4.5 2.5 6 2.5c1 0 1.7.5 2 1 .3-.5 1-1 2-1 1.5 0 3.5 1.5 3.5 4.5S8 14 8 14z"/>
+              </svg>
+            </span>
+            <!-- Wow reaction -->
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#F7B125;border:2px solid #ffffff;position:relative;z-index:1;margin-left:-4px;font-size:11px;line-height:1;">
+              <span style="font-size:11px;">&#128558;</span>
+            </span>
+          </div>
+          <span style="font-size:15px;color:#65676b;">42</span>
+        </div>
+        <div style="display:flex;gap:8px;font-size:15px;color:#65676b;">
+          <span>3 kommentarer</span>
+          <span>·</span>
+          <span>1 deling</span>
+        </div>
+      </div>
+
+      <!-- Action bar -->
+      <div style="border-top:1px solid #ced0d4;margin:0 16px;display:flex;padding:4px 0;">
+        <!-- Liker -->
+        <button class="fb-action-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#65676b">
+            <path d="M15.3 2.6c-.7 0-1.3.3-1.7.8L10 8.1V20h9.4l2.4-8.4V8.6h-5.5l.9-3.6c.1-.5 0-1-.3-1.4-.3-.4-.7-.6-1.2-.6h-.4zM4 9H2v12h4V9H4z"/>
+          </svg>
+          Liker
+        </button>
+        <!-- Kommenter -->
+        <button class="fb-action-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#65676b">
+            <path d="M12 2C6.48 2 2 5.81 2 10.5c0 2.49 1.26 4.73 3.25 6.31V22l4.15-2.28c.82.15 1.69.28 2.6.28 5.52 0 10-3.81 10-8.5S17.52 2 12 2zm1 11h-4v-1.5h4V13zm3-3H8V8.5h8V10z"/>
+          </svg>
+          Kommenter
+        </button>
+        <!-- Del -->
+        <button class="fb-action-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#65676b">
+            <path d="M21 12l-7-7v4C7 10 4 15 3 20c2.5-3.5 6-5 11-5v4l7-7z"/>
+          </svg>
+          Del
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================================================================ -->
+  <!-- X (TWITTER) CARD                                                  -->
+  <!-- ================================================================ -->
+  <div style="width:100%;max-width:500px;">
+    <span class="social-platform-label social-platform-label--x">
+      <!-- X icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="#ffffff">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+      X / Twitter
+    </span>
+
+    <div style="background:#ffffff;border-bottom:1px solid #eff3f4;padding:12px 16px;">
+
+      <!-- Header row -->
+      <div style="display:flex;align-items:flex-start;">
+        <!-- Profile pic -->
+        <div style="width:40px;height:40px;border-radius:50%;background:#eff3f4;flex-shrink:0;margin-right:12px;display:flex;align-items:center;justify-content:center;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#536471">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </div>
+        <!-- Name column -->
+        <div style="flex:1;min-width:0;">
+          <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;">
+            <span style="font-size:15px;font-weight:700;color:#0f1419;line-height:20px;">{{X_DISPLAY_NAME}}</span>
+            <span style="font-size:15px;font-weight:400;color:#536471;line-height:20px;">{{X_HANDLE}}</span>
+            <span style="font-size:15px;color:#536471;line-height:20px;">·</span>
+            <span style="font-size:15px;font-weight:400;color:#536471;line-height:20px;">{{X_TIMESTAMP}}</span>
+          </div>
+
+          <!-- Post body -->
+          <div style="font-size:15px;line-height:20px;color:#0f1419;margin-top:4px;white-space:pre-line;word-wrap:break-word;">{{X_TEXT}}</div>
+
+          <!-- Engagement row -->
+          <div style="display:flex;align-items:center;gap:48px;margin-top:12px;">
+            <!-- Replies -->
+            <div class="x-engagement-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="#536471">
+                <path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.25-.893 4.32-2.383 5.83l-4.685 4.61a.75.75 0 01-1.06-.02l-.003-.003a.75.75 0 01.02-1.06l4.685-4.61A6.12 6.12 0 0020.75 10.13c0-3.66-2.967-6.63-6.629-6.63H9.756c-3.593 0-6.505 2.91-6.505 6.5 0 1.77.71 3.45 1.97 4.7l1.47 1.47a.75.75 0 01-1.06 1.06l-1.47-1.47A7.96 7.96 0 011.75 10zm6.13 7.12a.75.75 0 01.09 1.06 3.28 3.28 0 01-2.49 1.32.75.75 0 01-.11-1.49 1.78 1.78 0 001.45-.8.75.75 0 011.06-.09z"/>
+              </svg>
+              <span style="font-size:13px;color:#536471;">{{X_REPLY_COUNT}}</span>
+            </div>
+            <!-- Reposts -->
+            <div class="x-engagement-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="#536471">
+                <path d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"/>
+              </svg>
+              <span style="font-size:13px;color:#536471;">{{X_REPOST_COUNT}}</span>
+            </div>
+            <!-- Likes -->
+            <div class="x-engagement-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="#536471">
+                <path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.56-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"/>
+              </svg>
+              <span style="font-size:13px;color:#536471;">{{X_LIKE_COUNT}}</span>
+            </div>
+            <!-- Views -->
+            <div class="x-engagement-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="#536471">
+                <path d="M8.75 21V3h2v18h-2zM18.75 21V8.5h2V21h-2zM13.75 21v-9h2v9h-2zM3.75 21v-5h2v5h-2z"/>
+              </svg>
+              <span style="font-size:13px;color:#536471;">{{X_VIEW_COUNT}}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Three-dot menu -->
+        <button style="background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;flex-shrink:0;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#536471">
+            <circle cx="6" cy="12" r="1.5"/>
+            <circle cx="12" cy="12" r="1.5"/>
+            <circle cx="18" cy="12" r="1.5"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</div>

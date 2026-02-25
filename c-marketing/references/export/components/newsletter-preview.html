@@ -1,0 +1,274 @@
+<!-- Newsletter Preview Component -->
+<div class="newsletter-preview-wrapper" style="background:#f6f8fc;padding:32px 24px;display:flex;flex-direction:column;align-items:center;font-family:'Google Sans',Roboto,Arial,sans-serif;">
+  <style scoped>
+    .newsletter-preview-wrapper * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Gmail Inbox Row */
+    .gmail-inbox-container {
+      width: 100%;
+      max-width: 720px;
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .gmail-inbox-row {
+      height: 52px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .gmail-inbox-row:hover {
+      background: #f2f2f2;
+    }
+
+    /* Checkbox */
+    .gmail-checkbox {
+      width: 18px;
+      height: 18px;
+      border: 2px solid #5f6368;
+      border-radius: 2px;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    /* Star */
+    .gmail-star {
+      width: 20px;
+      height: 20px;
+      margin-right: 12px;
+      flex-shrink: 0;
+      color: #5f6368;
+    }
+    .gmail-star svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Sender */
+    .gmail-sender {
+      font-size: 14px;
+      font-weight: 700;
+      color: #202124;
+      width: 180px;
+      flex-shrink: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      line-height: 52px;
+    }
+
+    /* Subject + Snippet */
+    .gmail-subject-snippet {
+      flex: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 14px;
+      line-height: 52px;
+      min-width: 0;
+    }
+    .gmail-subject {
+      font-weight: 500;
+      color: #202124;
+    }
+    .gmail-separator {
+      color: #5f6368;
+      font-weight: 400;
+    }
+    .gmail-snippet {
+      font-weight: 400;
+      color: #5f6368;
+    }
+
+    /* Timestamp */
+    .gmail-timestamp {
+      font-size: 12px;
+      font-weight: 400;
+      color: #5f6368;
+      flex-shrink: 0;
+      margin-left: 16px;
+      white-space: nowrap;
+    }
+
+    /* Expand indicator */
+    .gmail-expand-indicator {
+      width: 100%;
+      max-width: 720px;
+      display: flex;
+      justify-content: center;
+      padding: 8px 0;
+    }
+    .gmail-expand-indicator svg {
+      width: 24px;
+      height: 24px;
+      color: #5f6368;
+    }
+
+    /* Email Body */
+    .email-body-container {
+      width: 100%;
+      max-width: 600px;
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .email-header-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+    .email-content-area {
+      padding: 32px;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 24px;
+      color: #202124;
+    }
+    .email-content-area h2 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #202124;
+      margin: 24px 0 12px 0;
+      line-height: 1.3;
+    }
+    .email-content-area h2:first-child {
+      margin-top: 0;
+    }
+    .email-content-area p {
+      font-size: 14px;
+      line-height: 24px;
+      color: #3c4043;
+      margin-bottom: 16px;
+    }
+    .email-content-area ul,
+    .email-content-area ol {
+      font-size: 14px;
+      line-height: 24px;
+      color: #3c4043;
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .email-content-area li {
+      margin-bottom: 6px;
+    }
+    .email-content-area a {
+      color: #1a73e8;
+      text-decoration: underline;
+    }
+    .email-content-area img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    /* CTA Button */
+    .email-cta-button {
+      display: block;
+      margin: 24px auto;
+      padding: 12px 32px;
+      background: #1a73e8;
+      color: #ffffff !important;
+      border-radius: 24px;
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+      text-decoration: none !important;
+      max-width: 280px;
+      font-family: 'Google Sans', Roboto, Arial, sans-serif;
+      border: none;
+      cursor: pointer;
+      line-height: 1.4;
+    }
+    .email-cta-button:hover {
+      background: #1765cc;
+    }
+
+    /* PS Section */
+    .email-ps-section {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #e8eaed;
+      color: #5f6368;
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    /* Footer */
+    .email-footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid #e8eaed;
+      text-align: center;
+    }
+    .email-footer-unsubscribe {
+      font-size: 12px;
+      color: #5f6368;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .email-footer-company {
+      font-size: 12px;
+      color: #9aa0a6;
+      margin-top: 8px;
+    }
+  </style>
+
+  <!-- Part 1: Gmail Inbox Row -->
+  <div class="gmail-inbox-container">
+    <div class="gmail-inbox-row">
+      <!-- Checkbox -->
+      <div class="gmail-checkbox"></div>
+
+      <!-- Star -->
+      <div class="gmail-star">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/>
+        </svg>
+      </div>
+
+      <!-- Sender -->
+      <div class="gmail-sender">{{SENDER_NAME}}</div>
+
+      <!-- Subject + Snippet -->
+      <div class="gmail-subject-snippet">
+        <span class="gmail-subject">{{SUBJECT}}</span><span class="gmail-separator"> - </span><span class="gmail-snippet">{{PREHEADER}}</span>
+      </div>
+
+      <!-- Timestamp -->
+      <div class="gmail-timestamp">{{DATE}}</div>
+    </div>
+  </div>
+
+  <!-- Expand Indicator -->
+  <div class="gmail-expand-indicator">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </div>
+
+  <!-- Part 2: Email Body -->
+  <div class="email-body-container">
+    <!-- Header Image (optional — remove if {{HEADER_IMAGE}} is empty) -->
+    <img class="email-header-image" src="{{HEADER_IMAGE}}" alt="Header">
+
+    <!-- Email Content -->
+    <div class="email-content-area">
+      {{EMAIL_HTML}}
+
+      <!-- CTA Button -->
+      <a class="email-cta-button" href="{{CTA_URL}}">{{CTA_TEXT}}</a>
+
+      <!-- Footer -->
+      <div class="email-footer">
+        <a class="email-footer-unsubscribe" href="#">Avmeld nyhetsbrev</a>
+        <div class="email-footer-company">{{SENDER_NAME}} &bull; Adresse, Poststed</div>
+      </div>
+    </div>
+  </div>
+</div>
