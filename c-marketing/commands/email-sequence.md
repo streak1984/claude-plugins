@@ -117,6 +117,15 @@ PS: {valgfritt, sekundaer lenke eller mykere sporring}
 - Varier lengde etter e-postens jobb (se lengderetningslinjer)
 - Bruk copy-patterns fra referansefilen for hooks og CTA-er
 
+**Redigeringspass (forkortet seven sweeps):**
+
+Kjør disse fire passene på hver e-post etter skriving. Fiks stille — ikke list opp.
+
+1. **Klarhet** — Kan mottakeren forstå hver setning ved første lesing? Uklar pronomenreferanse, begravde poeng, sjargong uten kontekst → skriv om.
+2. **Stemme og tone** — Er stemmen konsistent med klientprofilen og sekvensens tone? Formelt/uformelt-skift midt i e-posten → fiks. Les høyt — høres det ut som en person?
+3. **Spesifisitet** — "spar tid" → "spar 4 timer i uken". Runde tall → eksakte tall. Vage verb → beskriv hva som faktisk skjer.
+4. **Null risiko** — Er hindringene for handling fjernet? Friksjon nær CTA, ubesvarte innvendinger, manglende tillitssignaler → fiks.
+
 ### 4. Iterasjon
 
 - Juster e-poster basert pa tilbakemelding
