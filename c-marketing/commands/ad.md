@@ -23,6 +23,16 @@ Lag betalte annonsekampanjer for Facebook, LinkedIn og Google for **$ARGUMENTS**
 - Norske termer der de finnes, med mindre det engelske er standard i fagfeltet
 - Annonsetekst skal vaere plattformnativ — skriv som om en erfaren norsk markedsforer formulerte det
 
+## Klientens skrivestil
+
+Sjekk om `clients/<slug>/style-guide.md` finnes. Hvis ja:
+- Les stilguiden og internalisér stemmesammendraget
+- Match klientens tone, ordforråd og stilmønstre gjennom hele teksten
+- Bruk referansetekstene som kvalitetsstandard
+- Følg "Skriv slik / Ikke slik"-eksemplene
+
+Hvis stilguiden ikke finnes, fortsett uten — bruk klientprofilen for tone-veiledning.
+
 ## Workflow
 
 ### 1. Brief

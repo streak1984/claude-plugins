@@ -13,6 +13,10 @@ This is a scoping/strategy skill — no writing, no voice rules, no conversion g
 
 **Bokmål** by default. English only if explicitly requested.
 
+## Klientens skrivestil
+
+Sjekk om `clients/<slug>/style-guide.md` finnes. Hvis ja, bruk stemmesammendraget til å informere tone-anbefalingen i briefen.
+
 ## Klientprofil-integrasjon
 
 Hvis en klientprofil er tilgjengelig (fra `/campaign` eller gitt direkte):

@@ -29,6 +29,16 @@ Norwegian-specific rules:
 - Professional register, but not stiff — conversational where appropriate
 - "Du/dere" for addressing readers, not "man"
 
+## Klientens skrivestil
+
+Sjekk om `clients/<slug>/style-guide.md` finnes. Hvis ja:
+- Les stilguiden og internalisér stemmesammendraget
+- Match klientens tone, ordforråd og stilmønstre gjennom hele teksten
+- Bruk referansetekstene som kvalitetsstandard
+- Følg "Skriv slik / Ikke slik"-eksemplene
+
+Hvis stilguiden ikke finnes, fortsett uten — bruk klientprofilen for tone-veiledning.
+
 ## Workflow
 
 ### 1. Brief and Keywords

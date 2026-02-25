@@ -24,6 +24,16 @@ Skriv et publiseringsklart organisk LinkedIn-innlegg om **$ARGUMENTS**. Personli
 - Norske termer der de finnes, med mindre det engelske er standard i fagfeltet
 - "Du/dere" for å adressere leseren, ikke "man"
 
+## Klientens skrivestil
+
+Sjekk om `clients/<slug>/style-guide.md` finnes. Hvis ja:
+- Les stilguiden og internalisér stemmesammendraget
+- Match klientens tone, ordforråd og stilmønstre gjennom hele teksten
+- Bruk referansetekstene som kvalitetsstandard
+- Følg "Skriv slik / Ikke slik"-eksemplene
+
+Hvis stilguiden ikke finnes, fortsett uten — bruk klientprofilen for tone-veiledning.
+
 ## LinkedIn-spesifikke regler
 
 ### Algoritmen
