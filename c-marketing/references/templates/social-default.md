@@ -35,10 +35,15 @@ Describe the visual content, not the message.
 
 **Target:** 150-300 words caption
 
+### Caption length guidance
+- Short captions (1-3 sentences) for strong visual content or bold statements
+- Long captions (150-300 words) for educational or story-driven content
+- Let the content dictate the length — not a default
+
 ## Facebook
 
-- Conversational, shorter than LinkedIn
-- 2-4 paragraphs
+- Conversational, more personal than LinkedIn
+- Length varies: 1-2 punchy paragraphs for hot takes, 3-5 for stories/education
 - Question-driven (Facebook rewards comments)
 - 1-3 hashtags max
 - Clear CTA or question, not both
@@ -55,3 +60,9 @@ Under 280 characters. Every word earns its place.
 0-2 hashtags.
 
 **Target:** 280 chars (single) or 3-7 tweets
+
+### Thread narrative arc
+- Tweet 1: Hook + promise of what's coming
+- Tweets 2-N: Each tweet delivers one point. Don't number them — let them flow.
+- Final tweet: CTA + reason to engage (retweet, follow, reply)
+- Threads that read like a blog post reformatted into tweets fail. Each tweet must stand alone.

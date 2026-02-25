@@ -12,31 +12,24 @@ date: YYYY-MM-DD
 ---
 ```
 
-## Sections
+## Structural Approaches
 
-### Hook (1-2 sentences)
-Personal opening. Connect to reader's situation. No definitions, no "I dagens...".
+Choose ONE approach based on the brief. Not every newsletter follows the same skeleton.
 
-**Target:** 20-40 words
+### Option A: Insight-First
+Hook → Key insight with proof → Implication for reader → CTA
 
-### Context (1 short paragraph)
-Why this matters right now. Bridge from hook to value.
+### Option B: Story-First
+Personal observation or story → Extract the lesson → Connect to reader → CTA
 
-**Target:** 40-60 words
+### Option C: Data-First
+Surprising stat or trend → What it means → What to do about it → CTA
 
-### Main value section (2-3 paragraphs)
-The insight, proof, or resource. This is the meat. Build desire for the CTA.
+## Section Guidelines
 
-**Target:** 150-250 words
-
-### CTA
-One clear action. Name the benefit, not just the action. Place after most compelling point.
-
-**Target:** 1-2 sentences
-
-### PS
-Secondary link or softer ask. Personal angle on the same CTA.
-
-**Target:** 1-2 sentences
+- **Hook**: 1-2 sentences. Personal opening. Connect to reader's situation.
+- **Value section**: 2-3 paragraphs. This is the meat. Build desire for the CTA.
+- **CTA**: One clear action. Name the benefit, not just the action.
+- **PS**: Optional — not mandatory. Use only when you have something genuinely worth adding. A personal angle on the same CTA or a soft secondary ask.
 
 ## Total target: 300-450 words

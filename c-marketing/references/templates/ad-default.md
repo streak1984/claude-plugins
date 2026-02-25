@@ -55,6 +55,18 @@ Generate these formats per platform:
 - Carousel comments: 10-40
 - Stories: no visible engagement
 
+## Carousel Narrative Arc
+
+Build an emotional arc across carousel cards:
+- **Card 1 (Hook):** Problem or bold claim — create tension
+- **Middle cards:** Build proof, show transformation, layer evidence
+- **Last card (CTA):** Resolution + clear next step
+- Each card should make the reader want to swipe. If they can stop at card 2 and feel satisfied, the arc is weak.
+
+## Engagement Note
+
+Engagement numbers should feel organic — avoid perfectly round numbers. 342 reactions feels real. 350 does not. Vary the ratios between reactions/comments/shares based on content type (controversial → more comments, inspirational → more shares).
+
 ## JSON Structure
 
 Use the exact JSON format from the /ad skill. Fill `page` defaults from client profile.

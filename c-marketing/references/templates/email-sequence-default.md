@@ -25,3 +25,13 @@ When part of a campaign, default to a **launch sequence** (5-7 emails) unless th
 - Reference other campaign content (article, newsletter) as CTA destinations
 - Build sequence arc that aligns with the campaign's core message from the brief
 - Use the brief's "Støttepunkter" as fodder for individual emails
+
+## Variation Within Sequences
+
+- **Not every email follows Hook → Context → Value → CTA.** Vary the structure:
+  - Some emails are story-only (personal narrative, case study)
+  - Some are data-only (one stat, one insight, one action)
+  - Some are brutally short (2-3 sentences, one link)
+  - Some break the fourth wall (ask a genuine question, request a reply)
+- **Progression test:** If you can swap email 1 and email 3 without noticing, the sequence lacks progression. Each email must build on the previous one.
+- **Length variation:** Email 1 can be 50 words. Email 4 can be 400. Let the job dictate the length.

@@ -30,6 +30,12 @@ Strong finish. Either a question (for engagement) OR a CTA (for action). Never b
 
 **Target:** 1 sentence
 
+## Variation Rules
+
+- **Never use the same hook type twice in a row** across campaign posts. If the last post opened with data, this one opens with a story.
+- **Vary closing patterns.** Options: provocative question, one-line takeaway, callback to the hook, concrete challenge to the reader, stripped-down CTA.
+- **Structure should feel organic.** If it reads like Hook → Setup → Insight → Takeaway every time, restructure.
+
 ### Hashtags
 3-5 hashtags. Mix niche and broad.
 
