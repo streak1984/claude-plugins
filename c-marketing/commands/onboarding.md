@@ -94,22 +94,49 @@ Kjør: /c-marketing:profile <domene>
 En profil inneholder tone of voice, målgruppe, CTA-mønstre og konkurranseanalyse — alt som trengs for å produsere innhold som matcher klientens merkevare.
 ```
 
-### Steg 6 — API-nøkler
+### Steg 6 — Tilby stilguide
 
-Vis veiledning for API-oppsett:
+Vis følgende melding:
 
 ```
-For stockbilder i kampanjer, trenger du en Pexels API-nøkkel.
+Vil du at jeg analyserer klientens eksisterende innhold og lager en stilguide?
 
-Sett PEXELS_API_KEY som miljøvariabel:
-  export PEXELS_API_KEY="din-nøkkel-her"
+Kjør: /c-marketing:style-guide <slug>
 
+En stilguide fanger klientens skrivestil — tone, ordforråd, setningsstruktur og
+eksempler. Innholdskommandoene bruker den til å matche klientens stemme.
+
+Uten en stilguide bruker innholdskommandoene en generisk norsk stemme.
+Med en stilguide matcher de kundens faktiske skrivestil.
+
+Dette steget er valgfritt, men anbefalt for best mulig innholdskvalitet.
+```
+
+### Steg 7 — API-nøkler
+
+Sjekk om `$PEXELS_API_KEY` miljøvariabel er satt:
+- Hvis satt: bekreft at den fungerer og gå videre
+- Hvis ikke satt: spør brukeren om Pexels API-nøkkelen
+
+Når nøkkelen er oppgitt, lagre den til `.c-marketing.json` i arbeidsområde-roten:
+
+```json
+{
+  "pexels_api_key": "brukerens-nøkkel"
+}
+```
+
+Vis veiledning:
+
+```
+For stockbilder i kampanjer bruker vi Pexels.
 Hent gratis nøkkel på: https://www.pexels.com/api/
 
+API-nøkkelen er lagret i .c-marketing.json i arbeidsområdet ditt.
 Uten denne nøkkelen vil bildesøk i kampanjer bli hoppet over.
 ```
 
-### Steg 7 — Oppsummering
+### Steg 8 — Oppsummering
 
 Vis en oppsummering av hva som ble opprettet og neste steg:
 
@@ -121,14 +148,12 @@ Opprettet:
   clients/<slug>/research/
   clients/<slug>/templates/
 
-Neste steg — nyttige kommandoer:
-  /c-marketing:campaign <tema>  — full kampanjeproduksjon med brief, innhold og bilder
-  /c-marketing:brief <tema>     — lag et kampanjebrief
-  /c-marketing:article <tema>   — skriv en artikkel
-  /c-marketing:linkedin <tema>  — skriv et LinkedIn-innlegg
+Anbefalt oppsett (i rekkefølge):
+  1. /c-marketing:profile <domene>     — generer klientprofil fra nettkilder
+  2. /c-marketing:style-guide <slug>   — analyser skrivestil for bedre innhold
+  3. /c-marketing:campaign <tema>      — kjør din første kampanje
 
-Tips: Start med å lage en klientprofil for best mulig innholdskvalitet:
-  /c-marketing:profile <domene>
+Tips: Profil + stilguide gir markant bedre innholdskvalitet.
 ```
 
 ## Regler
