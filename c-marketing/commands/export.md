@@ -35,7 +35,7 @@ Skriptet:
 1. Leser klientprofil, scaffold, komponentmaler og kampanjefiler
 2. Konverterer markdown til HTML og fyller inn alle plassholdere
 3. Fjerner tomme seksjoner og ubrukte navigasjonslenker
-4. Skriver ferdig HTML til `exports/<klient>-<kampanje>.html`
+4. Skriver ferdig HTML til `<kampanjemappe>/exports/<klient>-<kampanje>.html`
 5. Skriver JSON-sammendrag til stdout
 
 ### Fase 3 — Bekreft
@@ -45,7 +45,7 @@ Les JSON-utskriften fra skriptet og rapporter:
 ```
 Eksport ferdig!
 
-HTML: exports/<filnavn>.html
+HTML: <kampanjemappe>/exports/<filnavn>.html
 
 Innhold:
 - [liste over innholdstyper fra JSON]

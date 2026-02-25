@@ -35,14 +35,11 @@ const clientDir = path.resolve(campaignDir, '..', '..');
 const profilePath = path.join(clientDir, 'profile.md');
 const scaffoldPath = path.join(PLUGIN_ROOT, 'references', 'export', 'scaffold.html');
 const componentsDir = path.join(PLUGIN_ROOT, 'references', 'export', 'components');
-const exportsDir = path.join(PLUGIN_ROOT, 'exports');
+const exportsDir = path.join(campaignDir, 'exports');
 const outputFile = path.join(exportsDir, `${clientSlug}-${campaignSlug}.html`);
 
-// Image path prefix: from exports/ back to campaign images
-const imagePrefix = path.posix.join(
-  '..',
-  'clients', clientSlug, 'campaigns', campaignSlug
-);
+// Image path prefix: from campaign/exports/ to campaign/images/ (one level up)
+const imagePrefix = '..';
 
 // ── Read helper ──────────────────────────────────────
 function readFile(p) {
@@ -303,6 +300,19 @@ if (found.linkedin) {
   insertInto('linkedin-post', wrapComponent('linkedin-post', 'LinkedIn-innlegg', filled));
 }
 
+// ── Social image finder ─────────────────────────────
+function findSocialImage(prefix) {
+  const imagesDir = path.join(campaignDir, 'images');
+  if (!fileExists(imagesDir)) return null;
+  const files = fs.readdirSync(imagesDir);
+  // Look for files starting with the prefix (ig-, fb-)
+  const match = files.find(f => f.startsWith(`${prefix}-`) || f.startsWith(`${prefix}_`));
+  if (match) return `images/${match}`;
+  // Fallback: use any campaign image
+  const anyImage = files.find(f => /\.(jpg|jpeg|png|webp)$/i.test(f));
+  return anyImage ? `images/${anyImage}` : null;
+}
+
 // ── Social cards ─────────────────────────────────────
 if (found.social) {
   const tpl = readFile(path.join(componentsDir, 'social-cards.html'));
@@ -333,13 +343,13 @@ if (found.social) {
   // TODO: Social image filenames are convention-based — campaigns should include these files
   const filled = fillTokens(tpl, {
     IG_USERNAME: username,
-    IG_IMAGE: resolveImagePath('images/ig-team-digital.jpg'),
+    IG_IMAGE: resolveImagePath(findSocialImage('ig') || 'images/ig-placeholder.jpg'),
     IG_CAPTION: igCaption,
     IG_LIKE_COUNT: '89', // Placeholder metrics for visual preview
     FB_AUTHOR_NAME: profile.name,
     FB_TIMESTAMP: 'Nylig',
     FB_TEXT: fbText,
-    FB_IMAGE: resolveImagePath('images/fb-samarbeid.jpg'),
+    FB_IMAGE: resolveImagePath(findSocialImage('fb') || 'images/fb-placeholder.jpg'),
     X_DISPLAY_NAME: profile.name,
     X_HANDLE: `@${username}`,
     X_TIMESTAMP: '2t',
