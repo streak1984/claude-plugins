@@ -23,6 +23,6 @@ Mal for `campaign-summary.md` som genereres i kampanjemappen etter at alle innho
 - [liste over bilder i images/]
 
 ## Neste steg
-- Gjennomga innholdet og gi tilbakemelding
-- Kjor `/c-marketing:export` for HTML-forhandsvisning
+- Gjennomgå innholdet og gi tilbakemelding
+- Kjør `/c-marketing:export` for HTML-forhåndsvisning
 ```

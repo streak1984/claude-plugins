@@ -22,7 +22,7 @@ Start **alle valgte innholdstyper samtidig** ved å dispatche `content-writer` a
 
 **Viktig for sub-agenter:**
 - Hver agent skriver til sin output-fil i kampanjemappen
-- Agentene skal IKKE sporre brukeren om godkjenning underveis — de produserer forsteutkast basert på briefen
+- Agentene skal IKKE spørre brukeren om godkjenning underveis — de produserer førsteutkast basert på briefen
 - Artikkel-agenten inkluderer YAML frontmatter (title, description, slug, date, keywords)
 - Nyhetsbrev-agenten inkluderer YAML frontmatter (subject, preheader, date)
 - LinkedIn-agenten inkluderer hashtags
