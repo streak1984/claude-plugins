@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{CAMPAIGN_TITLE}} — Kampanjeeksport</title>
+  <style>
+    /* ===== CSS Custom Properties ===== */
+    :root {
+      --li-blue: #0A66C2;
+      --fb-blue: #1877F2;
+      --g-blue: #4285F4;
+      --g-green: #34A853;
+      --x-black: #0F1419;
+      --organic-accent: #057642;
+      --paid-accent: #1877F2;
+      --email-accent: #7c3aed;
+      --nav-width: 240px;
+      --content-max: 800px;
+      --spacing-sm: 8px;
+      --spacing-md: 16px;
+      --spacing-lg: 24px;
+      --spacing-xl: 40px;
+      --font-system: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      --font-serif: Georgia, 'Times New Roman', serif;
+      --bg-page: #f8f9fa;
+      --bg-card: #ffffff;
+      --border-light: #e0e0e0;
+      --text-primary: #1a1a2e;
+      --text-secondary: #65676b;
+    }
+
+    /* ===== CSS Reset ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-family: var(--font-system);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-page);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: var(--li-blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ===== Layout: Grid Container ===== */
+    .export-container {
+      display: grid;
+      grid-template-columns: var(--nav-width) 1fr;
+      max-width: 1100px;
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+
+    /* ===== Navigation ===== */
+    .export-nav {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      background: var(--bg-card);
+      border-right: 1px solid var(--border-light);
+      padding: var(--spacing-lg) 0;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      padding: 0 var(--spacing-lg) var(--spacing-lg);
+      border-bottom: 1px solid var(--border-light);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .nav-brand span {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+    }
+
+    .nav-group {
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .nav-group-header {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      padding: var(--spacing-sm) var(--spacing-lg);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-secondary);
+    }
+
+    .nav-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .nav-dot--organic { background: var(--organic-accent); }
+    .nav-dot--paid { background: var(--paid-accent); }
+    .nav-dot--email { background: var(--email-accent); }
+
+    .nav-links {
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 6px var(--spacing-lg) 6px calc(var(--spacing-lg) + 16px);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      transition: background 0.15s, color 0.15s, border-left-color 0.15s;
+      border-left: 3px solid transparent;
+    }
+
+    .nav-links a:hover {
+      background: var(--bg-page);
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .nav-links a.active {
+      color: var(--text-primary);
+      font-weight: 600;
+      background: var(--bg-page);
+    }
+
+    .nav-links a.active[data-category="organic"] {
+      border-left-color: var(--organic-accent);
+    }
+
+    .nav-links a.active[data-category="paid"] {
+      border-left-color: var(--paid-accent);
+    }
+
+    .nav-links a.active[data-category="email"] {
+      border-left-color: var(--email-accent);
+    }
+
+    /* Hamburger toggle — hidden on desktop */
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: var(--spacing-sm);
+      color: var(--text-primary);
+    }
+
+    .nav-toggle svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .mobile-nav-header {
+      display: none;
+    }
+
+    /* ===== Main Content Area ===== */
+    .export-main {
+      padding: var(--spacing-xl);
+      min-width: 0; /* prevent grid blowout */
+    }
+
+    /* ===== Campaign Header ===== */
+    .campaign-header {
+      margin-bottom: var(--spacing-xl);
+      padding-bottom: var(--spacing-lg);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .campaign-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .campaign-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .campaign-subtitle span {
+      display: inline-block;
+    }
+
+    .campaign-subtitle .separator {
+      margin: 0 var(--spacing-sm);
+      color: var(--border-light);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 999px;
+      background: var(--bg-page);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-light);
+    }
+
+    /* ===== Category Section ===== */
+    .category-section {
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: var(--spacing-lg);
+      padding-bottom: var(--spacing-md);
+      border-bottom: 2px solid var(--border-light);
+    }
+
+    .category-header .accent-bar {
+      width: 4px;
+      height: 28px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .category-header .accent-bar--organic { background: var(--organic-accent); }
+    .category-header .accent-bar--paid { background: var(--paid-accent); }
+    .category-header .accent-bar--email { background: var(--email-accent); }
+
+    .category-header h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* ===== Component Cards (shared base) ===== */
+    .component-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .component-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: var(--spacing-md);
+      color: var(--text-primary);
+    }
+
+    /* ===== Footer ===== */
+    .export-footer {
+      margin-top: var(--spacing-xl);
+      padding-top: var(--spacing-lg);
+      border-top: 1px solid var(--border-light);
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .export-footer span {
+      display: block;
+      margin-top: 4px;
+    }
+
+    /* ===== Print Styles ===== */
+    @media print {
+      .export-nav,
+      .nav-toggle,
+      .mobile-nav-header {
+        display: none !important;
+      }
+
+      .export-container {
+        display: block;
+        max-width: 100%;
+      }
+
+      .export-main {
+        padding: 0;
+      }
+
+      .component-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+      }
+
+      .category-section {
+        break-before: auto;
+      }
+
+      .campaign-header {
+        break-after: avoid;
+      }
+
+      html {
+        background: #fff;
+      }
+    }
+
+    /* ===== Responsive: Mobile (<768px) ===== */
+    @media (max-width: 767px) {
+      .export-container {
+        grid-template-columns: 1fr;
+      }
+
+      .export-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: auto;
+        max-height: 100vh;
+        overflow-y: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 0;
+        z-index: 1000;
+      }
+
+      .mobile-nav-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--spacing-sm) var(--spacing-md);
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      .mobile-nav-header .nav-brand {
+        padding: 0;
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-brand:not(.mobile-nav-header .nav-brand) {
+        display: none;
+      }
+
+      .nav-body {
+        display: none;
+        padding: var(--spacing-md) 0;
+        background: var(--bg-card);
+      }
+
+      .export-nav.nav-open .nav-body {
+        display: block;
+      }
+
+      .nav-links a {
+        padding: 10px var(--spacing-lg) 10px calc(var(--spacing-lg) + 16px);
+      }
+
+      .export-main {
+        padding: var(--spacing-lg) var(--spacing-md);
+        margin-top: 52px; /* space for fixed mobile nav header */
+      }
+
+      .campaign-header h1 {
+        font-size: 1.5rem;
+      }
+
+      .category-header h2 {
+        font-size: 1.15rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="export-container">
+
+    <!-- ===== Navigation Sidebar ===== -->
+    <nav class="export-nav" id="export-nav" role="navigation" aria-label="Innholdsnavigasjon">
+
+      <div class="mobile-nav-header">
+        <div class="nav-brand">
+          <span>Kampanjeeksport</span>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menyknapp" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line class="hamburger-top" x1="3" y1="6" x2="21" y2="6"/>
+            <line class="hamburger-mid" x1="3" y1="12" x2="21" y2="12"/>
+            <line class="hamburger-bot" x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="nav-brand" aria-hidden="true">
+        <span>Kampanjeeksport</span>
+      </div>
+
+      <div class="nav-body" id="nav-body">
+
+        <!-- Organic group -->
+        <div class="nav-group">
+          <div class="nav-group-header">
+            <span class="nav-dot nav-dot--organic"></span>
+            Organisk innhold
+          </div>
+          <ul class="nav-links">
+            <li><a href="#organic" data-category="organic">Oversikt</a></li>
+            <li><a href="#article" data-category="organic">Artikkel</a></li>
+            <li><a href="#linkedin-post" data-category="organic">LinkedIn-innlegg</a></li>
+            <li><a href="#social" data-category="organic">Sosiale medier</a></li>
+          </ul>
+        </div>
+
+        <!-- Paid group -->
+        <div class="nav-group">
+          <div class="nav-group-header">
+            <span class="nav-dot nav-dot--paid"></span>
+            Betalt annonsering
+          </div>
+          <ul class="nav-links">
+            <li><a href="#paid" data-category="paid">Oversikt</a></li>
+            <li><a href="#facebook-feed-ad" data-category="paid">Facebook Feed</a></li>
+            <li><a href="#facebook-carousel-ad" data-category="paid">Facebook Karusell</a></li>
+            <li><a href="#facebook-stories-ad" data-category="paid">Facebook Stories</a></li>
+            <li><a href="#linkedin-sponsored-ad" data-category="paid">LinkedIn Sponsored</a></li>
+            <li><a href="#google-search-ad" data-category="paid">Google Search</a></li>
+            <li><a href="#google-display-ad" data-category="paid">Google Display</a></li>
+          </ul>
+        </div>
+
+        <!-- Email group -->
+        <div class="nav-group">
+          <div class="nav-group-header">
+            <span class="nav-dot nav-dot--email"></span>
+            E-post
+          </div>
+          <ul class="nav-links">
+            <li><a href="#email" data-category="email">Oversikt</a></li>
+            <li><a href="#newsletter" data-category="email">Nyhetsbrev</a></li>
+            <li><a href="#email-sequence" data-category="email">E-postsekvens</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- ===== Main Content ===== -->
+    <main class="export-main">
+
+      <!-- Campaign Header -->
+      <header class="campaign-header">
+        <h1>{{CAMPAIGN_TITLE}}</h1>
+        <div class="campaign-subtitle">
+          <span>{{CLIENT_NAME}}</span>
+          <span class="separator">&middot;</span>
+          <span>{{CAMPAIGN_DATE}}</span>
+        </div>
+        <div class="badge-row">
+          {{CONTENT_COUNT_BADGE}}
+        </div>
+      </header>
+
+      <!-- ===== Organic Section ===== -->
+      <section id="organic" class="category-section">
+        <div class="category-header">
+          <div class="accent-bar accent-bar--organic"></div>
+          <h2>Organisk innhold</h2>
+        </div>
+
+        <!-- INSERT:article -->
+
+        <!-- INSERT:linkedin-post -->
+
+        <!-- INSERT:social -->
+
+      </section>
+
+      <!-- ===== Paid Section ===== -->
+      <section id="paid" class="category-section">
+        <div class="category-header">
+          <div class="accent-bar accent-bar--paid"></div>
+          <h2>Betalt annonsering</h2>
+        </div>
+
+        <!-- INSERT:facebook-feed-ad -->
+
+        <!-- INSERT:facebook-carousel-ad -->
+
+        <!-- INSERT:facebook-stories-ad -->
+
+        <!-- INSERT:linkedin-sponsored-ad -->
+
+        <!-- INSERT:google-search-ad -->
+
+        <!-- INSERT:google-display-ad -->
+
+      </section>
+
+      <!-- ===== Email Section ===== -->
+      <section id="email" class="category-section">
+        <div class="category-header">
+          <div class="accent-bar accent-bar--email"></div>
+          <h2>E-post</h2>
+        </div>
+
+        <!-- INSERT:newsletter -->
+
+        <!-- INSERT:email-sequence -->
+
+      </section>
+
+      <!-- ===== Footer ===== -->
+      <footer class="export-footer">
+        Eksportert fra c-marketing
+        <span>{{CAMPAIGN_DATE}}</span>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- ===== Minimal JS: Hamburger Toggle + Scroll Spy ===== -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* --- Hamburger toggle --- */
+      var navToggle = document.getElementById('nav-toggle');
+      var nav = document.getElementById('export-nav');
+
+      if (navToggle) {
+        navToggle.addEventListener('click', function () {
+          var isOpen = nav.classList.toggle('nav-open');
+          navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
+
+      /* Close mobile nav when a link is clicked */
+      var navLinks = document.querySelectorAll('.nav-links a');
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (window.innerWidth < 768) {
+            nav.classList.remove('nav-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
+      /* --- Scroll Spy via IntersectionObserver --- */
+      var sectionHeaders = document.querySelectorAll('.category-section, [id]');
+      var observerTargets = [];
+
+      /* Collect all elements that have an id and a matching nav link */
+      document.querySelectorAll('[id]').forEach(function (el) {
+        var matchingLink = document.querySelector('.nav-links a[href="#' + el.id + '"]');
+        if (matchingLink) {
+          observerTargets.push({ el: el, link: matchingLink });
+        }
+      });
+
+      if ('IntersectionObserver' in window && observerTargets.length > 0) {
+        var currentActive = null;
+
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var id = entry.target.id;
+              var link = document.querySelector('.nav-links a[href="#' + id + '"]');
+              if (link) {
+                /* Remove active from all links */
+                navLinks.forEach(function (l) { l.classList.remove('active'); });
+                link.classList.add('active');
+                currentActive = link;
+              }
+            }
+          });
+        }, {
+          rootMargin: '-10% 0px -80% 0px',
+          threshold: 0
+        });
+
+        observerTargets.forEach(function (item) {
+          observer.observe(item.el);
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
