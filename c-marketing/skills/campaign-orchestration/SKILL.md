@@ -30,6 +30,7 @@ Før du starter, identifiser klienten:
    - **Anbefalt:** Kjør `/c-marketing:onboarding` for å sette opp arbeidsområdet
 
 Les `clients/<slug>/profile.md` og hold den tilgjengelig for alle nedstrøms-faser.
+Les også `clients/<slug>/style-guide.md` hvis den finnes — hold den tilgjengelig for alle nedstrøms-agenter.
 
 ### Fase 1 — Brief (interaktiv)
 
