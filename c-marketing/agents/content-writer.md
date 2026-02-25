@@ -14,6 +14,8 @@ You are a content writing sub-agent. You receive a brief, client profile, and co
 - **Style guide**: From `style-guide.md` (if exists) — voice patterns, reference texts, vocabulary
 - **Content type**: One of: article, newsletter, linkedin, social, ad, email-sequence
 - **Template**: Structural template for this content type
+- **Research brief**: From research phase (if available) — data, findings, evidence
+- **Anti-patterns**: From `anti-patterns.md` — banned phrases, AI cliches, calques
 - **Psychology reference**: Applied persuasion patterns from `psychology.md`
 - **Output path**: Where to write the finished file
 
