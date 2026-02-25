@@ -6,9 +6,10 @@ This repo creates, maintains, and distributes Claude Code / Cowork plugins. Each
 
 ```
 claude-plugins/
+├── .claude-plugin/
+│   └── marketplace.json   # Marketplace manifest for distribution
 ├── CLAUDE.md              # This file — project conventions
 ├── README.md              # User-facing install docs
-├── marketplace.json       # Plugin registry for distribution
 └── <plugin-name>/         # One directory per plugin
     ├── .claude-plugin/
     │   └── plugin.json    # Manifest (name, version, description)
@@ -141,22 +142,29 @@ Available events: `PreToolUse`, `PostToolUse`, `PostToolUseFailure`, `UserPrompt
 
 Hook types: `command` (shell), `prompt` (LLM eval), `agent` (agentic verifier).
 
-### Marketplace — `marketplace.json`
+### Marketplace — `.claude-plugin/marketplace.json`
 
-Top-level registry listing all plugins in this repo:
+Marketplace manifest at the repo root's `.claude-plugin/` directory. Required for Claude Code to discover this repo as a marketplace.
 
 ```json
 {
+  "name": "tnm-plugins",
+  "owner": {
+    "name": "streak1984"
+  },
   "plugins": [
     {
       "name": "plugin-name",
-      "path": "plugin-name",
+      "source": "./plugin-name",
       "description": "What it does",
       "keywords": ["tag1", "tag2"]
     }
   ]
 }
 ```
+
+Required top-level fields: `name` (kebab-case marketplace ID), `owner` (object with `name`).
+Each plugin entry uses `source` (not `path`) with a `./` prefix for relative paths.
 
 Update this file whenever a plugin is added, removed, or renamed.
 
@@ -216,7 +224,7 @@ claude --plugin-dir ./plugin-one --plugin-dir ./plugin-two
 1. Create directory: `mkdir -p new-plugin/.claude-plugin`
 2. Create manifest: `new-plugin/.claude-plugin/plugin.json` with at minimum `name`
 3. Add components: `commands/`, `skills/`, `agents/`, `references/` as needed
-4. Add to `marketplace.json`
+4. Add to `.claude-plugin/marketplace.json`
 5. Add to top-level `README.md` plugin table
 6. Test with `claude --plugin-dir ./new-plugin`
 

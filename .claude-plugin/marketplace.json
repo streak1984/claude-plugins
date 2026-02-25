@@ -1,8 +1,12 @@
 {
+  "name": "tnm-plugins",
+  "owner": {
+    "name": "streak1984"
+  },
   "plugins": [
     {
       "name": "c-marketing",
-      "path": "c-marketing",
+      "source": "./c-marketing",
       "description": "Content marketing suite — campaigns, articles, ads, social, newsletters, and more. Norwegian Bokmål default.",
       "keywords": ["marketing", "content", "campaigns", "norwegian", "ads", "social-media"]
     }
