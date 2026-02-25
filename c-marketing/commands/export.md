@@ -5,115 +5,146 @@ argument-hint: "<campaign-dir>"
 
 # /export — $ARGUMENTS
 
-Eksporterer en kampanje til en selvforsynt HTML-fil for gjennomgang og deling.
+Eksporterer en kampanje til en selvforsynt HTML-fil med plattformtro forhåndsvisninger av alt innhold.
+
+## Context
+
+!references/export/scaffold.html
+
+## Language
+
+**Bokmål** by default. English only if explicitly requested.
 
 ## Workflow
 
-### 1. Finn kampanjemappen
+### Fase 1 — Finn kampanje
 
 - Hvis `$ARGUMENTS` er oppgitt: bruk den som kampanjesti
 - Hvis ikke: finn den nyeste kampanjemappen i `clients/*/campaigns/` (sorter etter dato i mappenavnet)
 - Bekreft at mappen finnes og inneholder kampanjefiler
 
-### 2. Les kampanjefiler
+Les `clients/<slug>/profile.md` hvis den finnes — brukes for klientnavn, avsendernavn og profilbilder i mockups.
 
-Les alle tilgjengelige filer fra kampanjemappen:
-- `brief.md`
-- `article.md`
-- `newsletter.md`
-- `linkedin.md`
-- `social.md`
-- `ads.json`
-- `email-sequence.md`
-- `research.md`
-- `images-metadata.json`
-- `campaign-summary.md`
+### Fase 2 — Kartlegg innhold
+
+Les kampanjemappen og bygg en innholdsoversikt. Kategoriser hver fil:
+
+**Organisk innhold:**
+
+| Kampanjefil | Komponent |
+|---|---|
+| `article.md` | `references/export/components/article-preview.html` |
+| `linkedin.md` | `references/export/components/linkedin-post.html` |
+| `social.md` | `references/export/components/social-cards.html` |
+
+**Betalt annonsering** (fra `ads.json` — parser JSON, grupper etter format og plattform):
+
+| Format + plattform | Komponent |
+|---|---|
+| `feed` + `facebook` | `references/export/components/facebook-feed-ad.html` |
+| `carousel` + `facebook` ELLER `linkedin` | `references/export/components/facebook-carousel-ad.html` |
+| `stories` | `references/export/components/facebook-stories-ad.html` |
+| `feed` + `linkedin` | `references/export/components/linkedin-sponsored-ad.html` |
+| `search` + `google` | `references/export/components/google-search-ad.html` |
+| `display` + `google` | `references/export/components/google-display-ad.html` |
+
+**E-post:**
+
+| Kampanjefil | Komponent |
+|---|---|
+| `newsletter.md` | `references/export/components/newsletter-preview.html` |
+| `email-sequence.md` | `references/export/components/email-sequence.html` |
 
 Hopp over filer som ikke finnes — kampanjer kan ha ulike innholdstyper.
 
-### 3. Generer HTML
+### Fase 3 — Les scaffold
 
-Skriv en selvforsynt HTML-fil med alt innhold. Filen skal fungere uten eksterne avhengigheter — all CSS er inline.
+Les `references/export/scaffold.html`. Dette er den ytre HTML-rammen med navigasjon, tre kategoriseksjoner (organisk/betalt/e-post), og innsettingsmarkører (`<!-- INSERT:xxx -->`).
 
-**HTML-struktur:**
+Fyll inn scaffold-plassholdere:
+- `{{CAMPAIGN_TITLE}}` — kampanjetema fra brief eller mappenavn
+- `{{CLIENT_NAME}}` — klientnavn fra profil
+- `{{CAMPAIGN_DATE}}` — dato fra kampanjemappen (YYYY-MM-DD)
+- `{{CONTENT_COUNT_BADGE}}` — f.eks. "6 innholdstyper"
 
-```html
-<!DOCTYPE html>
-<html lang="nb">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[Kampanjenavn] — Kampanjeeksport</title>
-  <style>
-    /* Inline CSS — se designspesifikasjon nedenfor */
-  </style>
-</head>
-<body>
-  <nav><!-- Navigasjon med lenker til hver seksjon --></nav>
-  <main>
-    <!-- Innholdsseksjoner -->
-  </main>
-</body>
-</html>
-```
+### Fase 4 — Bygg innhold per type
 
-**CSS-designspesifikasjon:**
-- System font stack: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`
-- Maks bredde: `900px`, sentrert
-- Bakgrunn: `#f8f9fa`, innhold: `#ffffff` med skygge
-- Overskrifter: mørk farge (`#1a1a2e`)
-- Navigasjon: fast sidebar eller topp-nav med ankerlenker
-- Seksjoner separert med tynt skillelinje
+For **hver innholdstype** som finnes i kampanjen:
 
-**Innholdsseksjoner (inkluder bare de som finnes):**
+1. **Les komponentmalen** — bruk Read-verktøyet til å lese riktig `.html`-fil fra `references/export/components/`
+2. **Parse kampanjefilen** — trekk ut YAML frontmatter og brødtekst
+3. **Konverter markdown til HTML** — overskrifter, avsnitt, lister, fet, kursiv, lenker
+4. **Fyll inn plassholdere** — erstatt alle `{{TOKEN}}`-er med faktisk kampanjedata
+5. **Sett inn i scaffold** — erstatt tilhørende `<!-- INSERT:xxx -->`-markør
 
-1. **Kampanjeoversikt** — fra `campaign-summary.md` eller `brief.md` (kjernebudskap, målgruppe, kanaler)
+#### Spesialhåndtering per type
 
-2. **Artikkel** — fra `article.md`:
-   - Ren typografi (serif for brødtekst)
-   - YAML frontmatter vises som metadata-kort (tittel, beskrivelse, søkeord)
-   - Markdown rendret som HTML
+**article.md:**
+- Parse YAML: title, description, slug, date, keywords
+- `{{TITLE}}` ← title, `{{DESCRIPTION}}` ← description, `{{SLUG}}` ← slug
+- `{{KEYWORDS}}` ← keywords (render som kommaseparert liste)
+- `{{DATE}}` ← date
+- `{{HERO_IMAGE}}` ← heroImage fra frontmatter (hvis den finnes), ellers utelat
+- `{{ARTICLE_HTML}}` ← brødtekst konvertert til HTML
+- `{{READING_TIME}}` ← estimer fra ordtelling (ordtelling / 200, rund opp)
 
-3. **Nyhetsbrev** — fra `newsletter.md`:
-   - E-post-stil layout (sentrert, maks 600px bredde)
-   - Subject line og preheader vises som metadata
-   - Enkel, lesbar design
+**linkedin.md:**
+- `{{AUTHOR_NAME}}` ← fra klientprofil (kontaktperson) eller klientnavn
+- `{{AUTHOR_HEADLINE}}` ← fra profil eller tom
+- `{{PROFILE_IMAGE}}` ← fra profil eller utelat
+- `{{TIMESTAMP}}` ← "Nylig"
+- `{{POST_TEXT}}` ← hele innlegget (ren tekst, behold linjeskift)
+- `{{HASHTAGS}}` ← hashtags fra bunnen av innlegget
+- `{{REACTION_COUNT}}` ← "47", `{{COMMENT_COUNT}}` ← "12", `{{SHARE_COUNT}}` ← "5" (placeholder-tall)
 
-4. **LinkedIn** — fra `linkedin.md`:
-   - LinkedIn-stil mockup: profilbilde-plassholder, navn, tekst
-   - Grå bakgrunn, hvitt kort, LinkedIn-blå aksent (`#0A66C2`)
-   - Hashtags under innlegget
+**social.md:**
+- Parse per-plattform seksjoner (## LinkedIn, ## Instagram, ## Facebook, ## X)
+- Fyll inn plattformspesifikke tokens: `{{IG_USERNAME}}`, `{{IG_CAPTION}}`, `{{FB_TEXT}}`, `{{X_TEXT}}` etc.
+- Bruk klientnavn/profil for brukernavn og avsender
+- Placeholder engasjementstall
 
-5. **Sosiale medier** — fra `social.md`:
-   - Faner eller seksjoner per plattform
-   - Enkel tekst-visning med plattform-indikator
+**ads.json:**
+- Parse JSON. Les `defaults.page` for sidenavn, profilbilde, følgertall
+- For HVER annonse i `ads`-arrayet:
+  - Identifiser format og plattform
+  - Les riktig komponentmal (kun første gang per format — gjenbruk for påfølgende)
+  - Fyll inn fra annonseobjektet: primaryText, headline, description, cta, media.imageUrl, engagement
+  - `{{PAGE_NAME}}` ← defaults.page.name, `{{PAGE_IMAGE}}` ← defaults.page.profileImageUrl
+  - `{{FOLLOWER_COUNT}}` ← defaults.page.followerCount (for LinkedIn)
+  - Render hver annonse som en egen komponent, alle satt inn i `<!-- INSERT:xxx -->`-markøren for riktig type
+  - Wrap multiple annonser av samme type i en container med overskrift ("Facebook feed-annonse 1", "Facebook feed-annonse 2")
 
-6. **Annonser** — fra `ads.json`:
-   - For hver annonse, vis en mockup basert på format:
-     - **Feed**: Kort med bilde-plassholder, primærtekst, overskrift, CTA-knapp
-     - **Karusell**: Horisontal rad med kort
-     - **Stories**: Høyt format med overlay-tekst
-     - **Google Search**: Søkeresultat-format (overskrifter, beskrivelse, URL)
-     - **Google Display**: Banner-format
-   - Plattform-farge: Facebook `#1877F2`, LinkedIn `#0A66C2`, Google `#4285F4`
+**newsletter.md:**
+- Parse YAML: subject, preheader, date
+- `{{SENDER_NAME}}` ← klientnavn fra profil
+- `{{SUBJECT}}` ← subject, `{{PREHEADER}}` ← preheader, `{{DATE}}` ← date
+- `{{EMAIL_HTML}}` ← brødtekst konvertert til HTML
+- `{{HEADER_IMAGE}}` ← headerImage fra frontmatter (hvis den finnes)
 
-7. **E-postsekvens** — fra `email-sequence.md`:
-   - Sekvenstabell (e-post, timing, mål)
-   - Utvidbar visning av hver e-post
+**email-sequence.md:**
+- Parse YAML: sequence, type, emails, trigger, date
+- `{{SEQUENCE_NAME}}` ← sequence, `{{SEQUENCE_TYPE}}` ← type
+- `{{TRIGGER}}` ← trigger, `{{TOTAL_EMAILS}}` ← emails (antall)
+- `{{SEQUENCE_TABLE_HTML}}` ← render sekvenstabell fra innholdet som HTML-tabell
+- For HVER e-post (## E-post #N):
+  - Parse delay, emnelinje, preheader fra e-postens metadata
+  - `{{EMAIL_NUMBER}}`, `{{DELAY}}`, `{{SUBJECT}}`, `{{PREHEADER}}`
+  - `{{EMAIL_BODY_HTML}}` ← e-postens brødtekst konvertert til HTML
+  - Repeter e-postnoden i timeline-komponenten for hver e-post
 
-8. **Research** — fra `research.md`:
-   - Strukturert visning av funn, kilder, konfidenssnivåer
+### Fase 5 — Fjern tomme seksjoner
 
-**Bilder:**
-- Hvis `images/`-mappen finnes, referer til bilder med relative stier
-- Vis alt-tekst fra `images-metadata.json`
+- Fjern alle gjenværende `<!-- INSERT:xxx -->`-markører som ikke ble fylt
+- Fjern hele kategoriseksjoner (`<section id="organic">`, `<section id="paid">`, `<section id="email">`) hvis de ikke inneholder noe innhold (kun markørene ble fjernet)
+- Oppdater navigasjonen: fjern nav-lenker til seksjoner som ikke finnes
 
-### 4. Skriv fil
+### Fase 6 — Skriv HTML
 
 - Opprett `exports/`-mappen hvis den ikke finnes
-- Skriv HTML-filen til `exports/<klient>-<kampanje-slug>.html`
+- Skriv HTML-filen til `exports/<klient-slug>-<kampanje-slug>.html`
+- Filnavnet utledes fra klientmappen og kampanjemappen
 
-### 5. Bekreft
+### Fase 7 — Bekreft
 
 ```
 Eksport ferdig!
@@ -121,12 +152,24 @@ Eksport ferdig!
 HTML: exports/<klient>-<kampanje-slug>.html
 
 Åpne i nettleser for å se forhåndsvisning, eller del filen med teamet.
+
+Innhold:
+- [liste over produserte innholdstyper og antall annonser]
+
+Kategorier:
+- Organisk: [liste]
+- Betalt: [liste]
+- E-post: [liste]
 ```
 
 ## Regler
 
 - Filen skal være 100% selvforsynt — ingen eksterne CSS, JS, eller fonter
+- **Les komponentfiler on demand** — kun de som trengs for denne kampanjen
+- Konverter markdown til HTML selv — ikke bruk eksterne verktøy
+- Bevar bildereferanser fra kampanjefiler som relative stier
+- Hvis `images/` finnes i kampanjemappen, bruk bildestier; ellers bruk plassholder-gradienter i komponentene
+- Ikke endre kildefilene — kun les og eksporter
 - Bruk semantisk HTML (article, section, nav, header)
 - Responsive design — fungerer på mobil og desktop
-- Hvis en innholdstype mangler, hopp over den seksjonen
-- Ikke endre kildefilene — kun les og eksporter
+- Plattform-mockups skal se troverdige ut — det er derfor vi bruker komponentmalene
