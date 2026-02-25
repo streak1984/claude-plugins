@@ -6,10 +6,12 @@ Start **alle valgte innholdstyper samtidig** ved å dispatche `content-writer` a
 
 1. **Den godkjente briefen** (komplett)
 2. **Klientprofilen** (innhold fra `clients/<slug>/profile.md`)
-3. **Research-briefen** (hvis den finnes fra Fase 2)
-4. **Strukturell mal** (innhold fra `references/templates/<type>-default.md` — eller `clients/<slug>/templates/<type>.md` hvis den finnes)
-5. **Anti-patterns** (innhold fra `references/anti-patterns.md`)
-6. **Output-sti** i kampanjemappen
+3. **Stilguiden** (innhold fra `clients/<slug>/style-guide.md` — hvis den finnes)
+4. **Research-briefen** (hvis den finnes fra Fase 2)
+5. **Strukturell mal** (innhold fra `references/templates/<type>-default.md` — eller `clients/<slug>/templates/<type>.md` hvis den finnes)
+6. **Anti-patterns** (innhold fra `references/anti-patterns.md`)
+7. **Psykologi-referanse** (innhold fra `references/psychology.md`)
+8. **Output-sti** i kampanjemappen
 
 | Innholdstype | Mal | Output |
 |-------------|-----|--------|
