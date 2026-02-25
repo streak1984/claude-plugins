@@ -1,0 +1,90 @@
+{
+  "hero-arbeidsflyt": {
+    "src": "images/hero-arbeidsflyt.jpg",
+    "source": "stock",
+    "alt": "Flatlay av elektronikk og kontorrekvisita på et skrivebord, symboliserer moderne arbeidsflyt",
+    "license": "Pexels License",
+    "originalUrl": "https://images.pexels.com/photos/3184454/pexels-photo-3184454.jpeg",
+    "pexelsId": 3184454
+  },
+  "ig-team-digital": {
+    "src": "images/ig-team-digital.jpg",
+    "source": "stock",
+    "alt": "Team som samarbeider rundt en bærbar datamaskin",
+    "license": "Pexels License",
+    "originalUrl": "https://images.pexels.com/photos/7691691/pexels-photo-7691691.jpeg",
+    "pexelsId": 7691691
+  },
+  "fb-samarbeid": {
+    "src": "images/fb-samarbeid.jpg",
+    "source": "stock",
+    "alt": "Kolleger i et møte diskuterer arbeid",
+    "license": "Pexels License",
+    "originalUrl": "https://images.pexels.com/photos/5439474/pexels-photo-5439474.jpeg",
+    "pexelsId": 5439474
+  },
+  "fb-ad-produktivitet": {
+    "src": "images/fb-ad-produktivitet.jpg",
+    "source": "stock",
+    "alt": "Mennesker som jobber sammen på et moderne kontor",
+    "license": "Pexels License",
+    "originalUrl": "https://images.pexels.com/photos/5257005/pexels-photo-5257005.jpeg",
+    "pexelsId": 5257005
+  },
+  "carousel-motereferat": {
+    "src": "images/carousel-motereferat.jpg",
+    "source": "stock",
+    "alt": "Kvinne som snakker i et møte med kolleger",
+    "license": "Pexels License",
+    "originalUrl": "https://images.pexels.com/photos/7640741/pexels-photo-7640741.jpeg",
+    "pexelsId": 7640741
+  },
+  "carousel-epost": {
+    "src": "images/carousel-epost.jpg",
+    "source": "stock",
+    "alt": "Person som bruker en bærbar datamaskin til e-post",
+    "license": "Pexels License",
+    "originalUrl": "https://images.pexels.com/photos/7693229/pexels-photo-7693229.jpeg",
+    "pexelsId": 7693229
+  },
+  "carousel-rapportering": {
+    "src": "images/carousel-rapportering.jpg",
+    "source": "stock",
+    "alt": "Person som jobber med dokumenter og data på skrivebordet",
+    "license": "Pexels License",
+    "originalUrl": "https://images.pexels.com/photos/7793675/pexels-photo-7793675.jpeg",
+    "pexelsId": 7793675
+  },
+  "stories-fokusert": {
+    "src": "images/stories-fokusert.jpg",
+    "source": "stock",
+    "alt": "Kvinne som jobber fokusert på en bærbar datamaskin",
+    "license": "Pexels License",
+    "originalUrl": "https://images.pexels.com/photos/4048771/pexels-photo-4048771.jpeg",
+    "pexelsId": 4048771
+  },
+  "li-ad-arbeidsplass": {
+    "src": "images/li-ad-arbeidsplass.jpg",
+    "source": "stock",
+    "alt": "Kvinnelige kolleger på en moderne arbeidsplass",
+    "license": "Pexels License",
+    "originalUrl": "https://images.pexels.com/photos/8101612/pexels-photo-8101612.jpeg",
+    "pexelsId": 8101612
+  },
+  "display-minimalist": {
+    "src": "images/display-minimalist.jpg",
+    "source": "stock",
+    "alt": "Bærbar datamaskin på et minimalistisk skrivebord",
+    "license": "Pexels License",
+    "originalUrl": "https://images.pexels.com/photos/67112/pexels-photo-67112.jpeg",
+    "pexelsId": 67112
+  },
+  "newsletter-header": {
+    "src": "images/newsletter-header.jpg",
+    "source": "stock",
+    "alt": "Person som bruker en MacBook Pro",
+    "license": "Pexels License",
+    "originalUrl": "https://images.pexels.com/photos/374074/pexels-photo-374074.jpeg",
+    "pexelsId": 374074
+  }
+}

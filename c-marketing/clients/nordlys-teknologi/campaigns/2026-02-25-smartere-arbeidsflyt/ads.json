@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "campaign": "Smartere arbeidsflyt",
+    "client": "Nordlys Teknologi",
+    "date": "2026-02-25",
+    "language": "nb"
+  },
+  "defaults": {
+    "page_name": "Nordlys Teknologi",
+    "profile_image": "https://placehold.co/96x96/0f4c81/ffffff?text=NT",
+    "follower_count": "4 823 følgere"
+  },
+  "ads": [
+    {
+      "platform": "facebook",
+      "format": "feed",
+      "primary_text": "Visste du at norske kontorarbeidere bruker nesten 30 % av arbeidsdagen på e-post og admin?\n\nEn bedriftsleder vi jobber med kuttet rapporteringstiden fra fire timer til tjue minutter — med ett enkelt AI-verktøy.\n\nI vår nye artikkel deler vi fem konkrete grep som frigjør timer hver uke. Ingen buzzwords, bare praktiske tips som fungerer for norske SMB-er.",
+      "headline": "Spar timer hver uke med smartere arbeidsflyt",
+      "description": "Fem AI-grep norske bedrifter bruker akkurat nå. Les artikkelen.",
+      "cta_text": "Les mer",
+      "image_url": "images/fb-ad-produktivitet.jpg",
+      "display_url": "nordlys.no",
+      "link_url": "https://nordlys.no/smartere-arbeidsflyt-ai-spare-tid"
+    },
+    {
+      "platform": "facebook",
+      "format": "carousel",
+      "primary_text": "Norske bedrifter kaster bort timer hver uke på manuelt arbeid. Her er fem AI-grep som endrer det →",
+      "cards": [
+        {
+          "image_url": "images/carousel-motereferat.jpg",
+          "headline": "Automatisk møtereferat",
+          "description": "Spar 30–45 min per møte med AI-transkribering",
+          "cta_text": "Les mer"
+        },
+        {
+          "image_url": "images/carousel-epost.jpg",
+          "headline": "Smartere e-posthåndtering",
+          "description": "Kutt e-posttiden med opptil 40 prosent",
+          "cta_text": "Les mer"
+        },
+        {
+          "image_url": "images/carousel-rapportering.jpg",
+          "headline": "Automatisert rapportering",
+          "description": "Fra fire timer til tjue minutter. Samme kvalitet.",
+          "cta_text": "Les mer"
+        }
+      ],
+      "display_url": "nordlys.no",
+      "link_url": "https://nordlys.no/smartere-arbeidsflyt-ai-spare-tid"
+    },
+    {
+      "platform": "facebook",
+      "format": "stories",
+      "image_url": "images/stories-fokusert.jpg",
+      "overlay_headline": "Spar timer hver uke med AI",
+      "overlay_position": "center",
+      "cta_text": "Les mer",
+      "link_url": "https://nordlys.no/smartere-arbeidsflyt-ai-spare-tid"
+    },
+    {
+      "platform": "linkedin",
+      "format": "feed",
+      "primary_text": "Norske kontorarbeidere bruker nesten 30 % av arbeidsdagen på e-post og admin. For en bedrift med ti ansatte betyr det fire til fem fulle stillinger som går til oppgaver som ikke skaper verdi.\n\nVi har samlet fem konkrete AI-grep som norske SMB-er bruker akkurat nå — uten å trenge et eget IT-team.\n\nLes artikkelen og finn ut hvor du kan starte.",
+      "headline": "Fem AI-grep for smartere arbeidsflyt",
+      "description": "Konkrete tips for norske SMB-er som vil spare tid.",
+      "cta_text": "Les mer",
+      "image_url": "images/li-ad-arbeidsplass.jpg",
+      "display_url": "nordlys.no",
+      "link_url": "https://nordlys.no/smartere-arbeidsflyt-ai-spare-tid"
+    },
+    {
+      "platform": "google",
+      "format": "search",
+      "headlines": [
+        "Smartere arbeidsflyt med AI",
+        "Spar timer hver uke",
+        "AI-verktøy for norske SMB-er"
+      ],
+      "descriptions": [
+        "Fem konkrete AI-grep som norske bedrifter bruker nå. Ingen teknisk kompetanse kreves.",
+        "Kutt manuelt arbeid og frigjør tid til oppgavene som betyr noe. Les guiden gratis."
+      ],
+      "display_url": "nordlys.no",
+      "paths": ["smartere-arbeidsflyt", "guide"],
+      "sitelinks": [
+        {
+          "headline": "Last ned verktøyguiden",
+          "description": "Gratis guide til AI-verktøy for norske SMB-er"
+        },
+        {
+          "headline": "Book en samtale",
+          "description": "15 min uforpliktende rådgivning"
+        },
+        {
+          "headline": "Kundehistorier",
+          "description": "Se hva andre norske bedrifter har oppnådd"
+        },
+        {
+          "headline": "Om Nordlys Teknologi",
+          "description": "Smartere verktøy for norske bedrifter"
+        }
+      ],
+      "link_url": "https://nordlys.no/smartere-arbeidsflyt-ai-spare-tid"
+    },
+    {
+      "platform": "google",
+      "format": "display",
+      "size": "300x250",
+      "headline": "Jobb smartere med AI",
+      "description": "Fem grep som sparer norske bedrifter timer hver uke.",
+      "cta_text": "Les gratis guide",
+      "cta_color": "#2ecc71",
+      "background_color": "#0f4c81",
+      "image_url": "images/display-minimalist.jpg",
+      "logo_url": "https://placehold.co/80x80/0f4c81/ffffff?text=NT",
+      "link_url": "https://nordlys.no/smartere-arbeidsflyt-ai-spare-tid"
+    }
+  ]
+}
