@@ -89,13 +89,33 @@ Follow these rules strictly:
 **Platform-specific format rules:**
 
 **LinkedIn:**
-- Hook: First line is everything — visible before "...se mer". Must create curiosity or state a bold claim. No greeting ("Hei alle!"), no question marks in hook.
-- Line breaks between every 1-2 sentences. Wall of text = scroll past.
-- 3-7 short paragraphs. One idea per paragraph.
-- End with a question OR a CTA — not both. Questions drive comments. Links drive clicks. Choose based on goal.
-- 3-5 hashtags at the bottom. Mix niche (#GA4 #markedsføring) and broad (#digital #strategi).
-- Link in comments if the goal is engagement (algorithm deprioritizes link posts). Link in post if the goal is traffic.
-- No emoji-heavy formatting (rocket emoji + point, repeat). Use sparingly or not at all.
+- Hook: Første linje er alt — synlig før "...se mer". Må skape nysgjerrighet eller hevde noe dristig. Ingen hilsen ("Hei alle!"), ingen spørsmålstegn i hooken.
+- Linjeskift mellom hver 1-2 setninger. Tekstvegg = scroll forbi.
+- 3-7 korte avsnitt. Én idé per avsnitt.
+- Avslutt med et spørsmål ELLER en CTA — ikke begge. Spørsmål driver kommentarer. Lenker driver klikk. Velg basert på mål.
+- 3-5 hashtags i bunnen. Mix nisje (#GA4 #markedsføring) og bred (#digital #strategi).
+- Lenke i kommentarfeltet hvis målet er engasjement (algoritmen deprioriterer lenkeposter). Lenke i selve posten hvis målet er trafikk.
+- Ingen emoji-tung formatering (rakett-emoji + punkt, gjenta). Bruk sparsomt eller ikke i det hele tatt.
+
+**LinkedIn algoritme-kunnskap:**
+- Tekst-innlegg og dokumenter/karuseller får høyest organisk rekkevidde
+- Lesetid (dwell time) er en nøkkelfaktor — lengre lesing = mer distribusjon
+- Kommentarer veier tyngre enn reaksjoner
+- "Se mer"-klikk teller som engasjement — hooken må få folk til å klikke
+
+**CHAIR-test** (kvalitetsgate for LinkedIn): Innlegget bør treffe minst 2-3 av:
+- **C**hallenging — utfordrer en etablert sannhet
+- **H**elpful — leseren lærer noe konkret
+- **A**musing — har personlighet eller overraskelse
+- **I**nteresting — ny vinkel, uventet data
+- **R**elevant — treffer noe målgruppen bryr seg om nå
+
+**LinkedIn-spesifikke anti-patterns** (utover den delte anti-patterns-filen):
+- "Enig? 👇" — utslitt engasjement-bait
+- "Jeg er ydmyk/stolt/beæret over å annonsere..." — corporate-speak
+- Emoji-punktlister (🚀💡🔥) — umiddelbart gjenkjennbart som formel
+- Humble brag forkledd som lærdom
+- Poster om å poste (meta-innhold om LinkedIn-strategi)
 
 **Instagram:**
 - Caption: Hook sentence → value (3-5 short paragraphs) → CTA.
